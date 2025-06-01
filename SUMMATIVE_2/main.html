@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabako Resume</title>
+
+    <style>
+
+        @font-face {
+            font-family: 'NourdFont';
+            src: url('nourd_bold.ttf') format('truetype');
+        }
+
+        .Header h2 {
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .Header h5 {
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .Contacts a{
+                color: black;
+        }
+
+        .Contacts ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            list-style: disc inside;
+            justify-content: center; /* center the bullet items */
+        }
+
+        .Contacts ul li::marker{
+            color: #b69d74;
+            font-size: 18px;
+        }
+
+        .Contacts{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .desc{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 13px;
+            text-align: center, justify;
+            max-width: 800px; 
+            margin: 20px auto;
+        }
+        .Creds table{
+            border-collapse: collapse;
+            margin: 0 auto;
+            max-width: 810px;
+            width: 100%;
+        }
+
+        .c1{
+            font-family: 'NourdFont', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            color: #b69d74;
+            vertical-align: top;
+            padding-right: 12px;
+            
+        }
+        
+        .Name{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 13px;
+        }
+
+        .Course{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+
+        .Years{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 12px;
+        }
+
+        .Header{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 13px;
+        }
+
+        .Subheader{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 12.8px;
+            
+        }
+
+        .lists{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 12.8px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .enumerate li{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 13px;
+            text-align: left;
+        }
+        .enumerate strong{
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 13px;
+        }
+
+        .Educ{
+            border-top: 1px solid grey;
+        }
+
+        .Exp{
+            border-top: 1px solid grey;
+        }
+
+        .Skills{
+            border-top: 1px solid grey;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--Header for name and roles-->
+    <div class="Header">
+        <h2>AIKO TABAKO</h2>
+        <h5>Layout and Graphic Designer, Illustrator, writer, Game development student</h5>
+    </div>
+
+    <!-- Contacts -->
+     <div class="Contacts">
+        <ul>
+            <li>#21 Managua St. VistaVerde Lawang Bato, 
+            <br>Valenzuela City, Metro Manila</li>
+            <li>aiko05tabako@gmail.com</li>
+            <li>09171321227</li>
+            <li><a href="https://createkko.my.canva.site/home" target="_blank">createkko.my.canva.site</a></li>
+        </ul>
+     </div>
+
+     <hr style="border: 1px solid #b69d74; ">
+
+     <!--Description (not updated from SHS)-->
+     <div class="desc">
+        <p>Currently studying as a Multimedia art student with 2-years experience in offering commissions to close relatives and friends,
+         which includes video editing and poster designs. I mainly work independently, but I also function well in group works.
+         I'm seeking a multimedia designer internship to utilize my abilities and knowledge specializing
+         in brand advertisement, publication layout, and creative writing while challenging myself to adapt to new skills to grow in my career.</p>
+     </div>
+
+     <!--Credentials-->
+     <div class="Creds">
+        <!--Education-->
+        <table class ="Educ">
+            <tr class="Ed">
+                <td class ="c1">Education</td>
+                <td class ="c2">
+                    <table class ="EducInner">
+                        <tr class="JHS">
+                            <td class="Name">St. Joseph School of Lawang Bato - With High Honors</td>
+                            <td class="Years" rowspan="1">2018–2022</td>
+                        </tr>
+                        <tr>
+                            <td class="Course">Junior High School</td>
+                        </tr>
+                            <tr class="Shs">
+                                <td class="Name">Information and Communications Technology Academy Nexus - With High Honors</td>
+                                <td class="Years" rowspan="1">2022–2024</td>
+                            </tr>
+                            <tr>
+                                <td class="Course">Arts and Design Track <br>
+                                     Specialization in Media and Visual Arts</td></tr>
+                                <tr class="College">
+                                    <td class="Name">FEU Institute of Technology</td>
+                                    <td class="Years" rowspan="1">2024–Present</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="Course">Bachelor of Science in Information Technology <br>
+                                         Major in Animation and Game Development</td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!--Experiences-->
+        <table class="Exp">
+            <tr>
+                <td class="c1">
+                    Experiences
+                </td>
+                <td class="c2">
+                    <table class="ExpInner">
+                        <!--Game Proj-->
+                        <tr class="Games">
+                            <td class="Header" colspan="2"> GAME DEVELOPING PROJECTS </td>
+                            <td class="Years" rowspan="1" >
+                                November 2024 - Present
+                            </td>
+                        </tr>
+                        <tr class="lists">
+                            <td colspan="3">
+                                <li>Programmed core gameplay mechanics for a Tagalog vocabulary game in C++, including viewing of Learned Tagalog Words function, avatar movement, and High Score storing.</li>
+                                <li>Served as the Lead Programmer for a Text-based roleplaying game with a team of 4 developers, responsible for both the technical architecture and the management of the programming team.</li>
+                            </td>
+                        </tr>
+                        <!--Graphics and Illustrators-->
+                        <tr class="Graphics">
+                            <td class="Header" colspan="2"> GRAPHIC DESIGNER AND 2D ILLUSTRATOR </td>
+                        </tr>
+                        <tr>
+                            <td class="Subheader"> Freelancing Projects</td>
+                            <td class="Years" rowspan="1" colspan="2" >(December 2022 - Present)</td>
+                        </tr>
+                        <tr class="lists">
+                            <td colspan="3">
+                                <li>Coordinated with another freelancer in making a business logo for a performance task in UST.</li>
+                                <li>Created a publication material for Momiji Restaurant's Mix and Match Deal using Canva.</li>
+                                <li>Designed 2 distinct career path magazine covers for OLFU students with Adobe Photoshop.</li>
+                                <li>Assisted in a final movie poster for a school project of an OLFU student</li>
+                                <li>Drafted a product proposal for a STEM student in UE. </li>
+                                <li>Compiled at least 5 character design and two 2 landscape design for an unpublished Tagalog webcomic.</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Subheader"> The Storytelling Project - Junior Marketing Associate </td>
+                            <td class="Years" rowspan="1" colspan="2">(April 2024 - May 2024)</td>
+                        </tr>
+                        <tr class="lists">
+                            <td colspan="3">
+                                <li>Build a world for a science-fiction, dystopian-like Filipino novel.</li>
+                                <li>Brainstormed the information of 7 characters and 2 setting details of a Tagalog webcomic.</li>
+                                <li>Completed the 3 chapters for the Filipino science fiction novel manuscript.</li>
+                                <li>Illustrated 8 visual assets depicting the four core characters using Adobe Fresco.</li>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="Subheader"> Game Designing Projects  </td>
+                            <td class="Years" rowspan="1" colspan="2">(November 2024 - Present)</td>
+                        </tr>
+                        <tr class="lists">
+                            <td colspan="3">
+                                <li>Conceptualized UI designs encompassing over ... elements for an engaging vocabulary game.</li>
+                                <li>Designed 6 character sheets of enemy bosses for the Text-based roleplaying game.</li>
+                            </td>
+                        </tr>
+                        <!--Writings-->
+                        <tr class="Writings">
+                            <td class="Header" colspan="2"> WRITER </td>
+                        </tr>
+                        <tr>
+                            <td class="Subheader"> Literature Writer</td>
+                            <td class="Years" rowspan="1" colspan="2" >(June 2023 - Present)</td>
+                        </tr>
+                        <tr class="lists">
+                            <td colspan="3">
+                                <li>Build a world for a science-fiction, dystopian-like Filipino novel. </li>
+                                <li>Brainstormed the information of 7 characters and 2 setting details of a Tagalog webcomic.</li>
+                                <li>Completed the 3 chapters for the Filipino science fiction novel manuscript.</li>
+                                <li>Outlined 5 one-shot stories, 2 short stories, and 3 plot prompts.</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Subheader"> Game Lores </td>
+                            <td class="Years" rowspan="1" colspan="2">(April 2024 - May 2024)</td>
+                        </tr>
+                        <tr class="lists">
+                            <td colspan="3">
+                                <li>Authored the complete main storyline, branching narratives, and key plot points for the Text-based roleplaying game</li>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!--Skills and Interests-->
+        <table class="Skills">
+            <tr>
+                <td class="c1">
+                    Skills and<br>
+                    Interests
+                </td>
+                <td class="c2" colspan="3">
+                    <table class="SkillsInner" >
+                        <ul class="enumerate">
+                            <li><strong>Technical: </strong>C++, Microsoft Office, Google Workspace, Adobe Creative Suites, Canva</li>
+                            <li><strong>Interpersonal: </strong>Project Management, Verbal and Written Communication, Problem Solving, Adaptable</li>
+                            <li><strong>Intrapersonal: </strong>Flexible, Quick Learner, Conceptual Thinking, Perseverance, Attention to Details</li>
+                            <li><strong>Language: </strong>Native Filipino speaker; Excellent in English</li>
+                            <li><strong>Interests: </strong>Reading Histories, Single-player Games, Learning new fun facts, Journalism</li>
+                        </ul>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+     </div>
+
+</body>
+</html>
+
