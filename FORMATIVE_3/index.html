@@ -9,13 +9,30 @@
 
 </head>
 <body>
-   <!--
-1. Research for the fields/data to be used in your form (for employee information)
-2. Create a Form that will use External CSS.
-3. Filenames: index.html (Registration Form) and external_registration.css (External CSS)
-4. TO SUBMIT: Paste the link of your GitHub pages repository.
---> 
-<div class="Pers">
+
+<div class="header">
+    <img src="Header.jpg" alt="">
+</div>
+
+
+<div class="apply-box">
+  <label for="position">Applying for:</label>
+  <select id="position" name="position" required>
+    <option value="" disabled selected>Select a position</option>
+    <option>Graphic Designer</option>
+    <option>Web Developer</option>
+    <option>Project Manager</option>
+    <option>Multimedia Artist Intern</option>
+    <option>Sound Designer Intern</option>
+    <option>Junior Music Producer</option>
+    <option>Data Analyst</option>
+    <option>Quality Assurance</option>
+  </select>
+</div>
+
+
+<div class="forms">
+    <div class="Pers">
     <form>
         <label for="name">Full Name:</label><br>
         <input type="text" required="required"><br>
@@ -40,13 +57,13 @@
             </div>
         </div>
     </form>
-</div>
+    </div>
 
-<div class="Divider">
+    <div class="Divider">
     <hr class="dashed">
-</div>
+    </div>
 
-<div class="Contacts">
+    <div class="Contacts">
     <form>
         <div class="con_col">
             <div class="c_col1">
@@ -91,13 +108,13 @@
             </div>
         </div>
     </form>
-</div>
+    </div>
 
-<div class="Divider">
+    <div class="Divider">
     <hr class="dashed">
-</div>
+    </div>
 
-<div class="Educ">
+    <div class="Educ">
     <table>
         <thead>
             <th>Educational Attainment</th>
@@ -126,9 +143,13 @@
             </tr>
         </tbody>
     </table>
-</div>
+    </div>
 
-<div class="file">
+    <div class="Divider">
+    <hr class="dashed">
+    </div>
+
+    <div class="file">
     <form>
         <label for="resume">Upload Resume*</label><br>
         <input type="file"><br>
@@ -137,17 +158,27 @@
         <input type="file"><br>
 
         <label for="Pf">Upload Portfolio*</label><br>
-        <p>If you're applying for non-creative position, put N/A<br></p>
+        <h6 class="form-note">If you're applying for non-creative position, put N/A</h6>
         <input type="file"><br>
     </form>
-</div>
+    </div>
 
-<div class="additional">
+    <div class="Divider">
+    <hr class="dashed">
+    </div>
+
+    <div class="additional">
     <form>
         <label for="reason">Why do you want to work with us? </label><br>
         <textarea></textarea>
     </form>
+    </div>
+
+    <button class="done" type="submit">Send Form</button>
+
 </div>
+
+
 
 </body>
 </html>
