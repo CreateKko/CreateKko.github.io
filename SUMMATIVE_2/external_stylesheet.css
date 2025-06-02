@@ -1,0 +1,160 @@
+
+
+@font-face {
+    font-family: 'NourdFont';
+    src: url('nourd_bold.ttf') format('truetype');
+}
+
+.Header h2 {
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    margin-bottom: 4px;
+}
+.Header h5 {
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 4px;
+    color: black;
+}
+
+.Contacts a{
+        color: black;
+}
+
+.Contacts ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: disc inside;
+    justify-content: center; /* center the bullet items */
+}
+
+.Contacts ul li::marker{
+    color: #b69d74;
+    font-size: 18px;
+}
+
+.Contacts{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.desc{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center, justify;
+    max-width: 800px; 
+    margin: 20px auto;
+}
+.Creds table{
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-width: 810px;
+    width: 100%;
+}
+
+.c1{
+    font-family: 'NourdFont', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    color: #b69d74;
+    vertical-align: top;
+    padding-right: 12px;
+    
+}
+
+.Name{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.Course{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+
+.Years{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.Header{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+    padding-left: 10px;
+    color: #b69d74;
+}
+
+.Subheader{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12.8px;
+    
+}
+
+.lists{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 12.8px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.enumerate li{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 13px;
+    text-align: left;
+}
+.enumerate strong{
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.Educ{
+    border-top: 1px solid grey;
+}
+
+.Exp{
+    border-top: 1px solid grey;
+}
+
+.Skills{
+    border-top: 1px solid grey;
+}
+
+.Pic{
+ background-color: rgb(255, 255, 255, 0.9);
+ display: flex;
+ padding: 2%;
+ margin-bottom: 2%;
+}
+

@@ -4,190 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabako Resume</title>
-
-    <style>
-
-        @font-face {
-            font-family: 'NourdFont';
-            src: url('nourd_bold.ttf') format('truetype');
-        }
-
-        .Header h2 {
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            text-align: left;
-            margin-bottom: 4px;
-        }
-        .Header h5 {
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            text-align: left;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        .Contacts a{
-                color: black;
-        }
-
-        .Contacts ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            list-style: disc inside;
-            justify-content: center; /* center the bullet items */
-        }
-
-        .Contacts ul li::marker{
-            color: #b69d74;
-            font-size: 18px;
-        }
-
-        .Contacts{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 13px;
-            text-align: center;
-        }
-
-        .desc{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 13px;
-            text-align: center, justify;
-            max-width: 800px; 
-            margin: 20px auto;
-        }
-        .Creds table{
-            border-collapse: collapse;
-            margin: 0 auto;
-            max-width: 810px;
-            width: 100%;
-        }
-
-        .c1{
-            font-family: 'NourdFont', sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 15px;
-            color: #b69d74;
-            vertical-align: top;
-            padding-right: 12px;
-            
-        }
-        
-        .Name{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 13px;
-        }
-
-        .Course{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 100;
-            font-style: normal;
-            font-size: 12px;
-            padding-bottom: 20px;
-        }
-
-        .Years{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 500;
-            font-style: normal;
-            font-size: 12px;
-        }
-
-        .Header{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 13px;
-        }
-
-        .Subheader{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 12.8px;
-            
-        }
-
-        .lists{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 100;
-            font-style: normal;
-            font-size: 12.8px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .enumerate li{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 100;
-            font-style: normal;
-            font-size: 13px;
-            text-align: left;
-        }
-        .enumerate strong{
-            font-family: "IBM Plex Sans Thai", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 13px;
-        }
-
-        .Educ{
-            border-top: 1px solid grey;
-        }
-
-        .Exp{
-            border-top: 1px solid grey;
-        }
-
-        .Skills{
-            border-top: 1px solid grey;
-        }
-
-     .Pic{
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 15px;
-            border: 2px solid #000;
-            box-shadow: 5px 5px 0px #000;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="external_stylesheet.css">
+    
 </head>
 <body>
-<!-- Pic -->
-<div class="Pic">
-<img src="2x2.jpg">
-</div>
+    <table class="head">
+        <tr class="header">
+            <td class="Pic">
+                <img width="200" margin-right="10%" src="2x2.jpg">
+            </td>
 
-    <!--Header for name and roles-->
-    <div class="Header">
-        <h2>AIKO TABAKO</h2>
-        <h5>Layout and Graphic Designer, Illustrator, writer, Game development student</h5>
-    </div>
-
-    <!-- Contacts -->
-     <div class="Contacts">
-        <ul>
-            <li>#21 Managua St. VistaVerde Lawang Bato, 
-            <br>Valenzuela City, Metro Manila</li>
-            <li>aiko05tabako@gmail.com</li>
-            <li>09171321227</li>
-            <li><a href="https://createkko.my.canva.site/home" target="_blank">createkko.my.canva.site</a></li>
-        </ul>
-     </div>
+            <td>
+                <div class="Header">
+                    <h2>AIKO TABAKO</h2>
+                    <h5>Layout and Graphic Designer, Illustrator, writer, Game development student</h5>
+                </div>
+                <div class="Contacts">
+                    <ul>
+                        <li>#21 Managua St. VistaVerde Lawang Bato, 
+                        <br>Valenzuela City, Metro Manila</li>
+                        <li>aiko05tabako@gmail.com</li>
+                        <li>09171321227</li>
+                        <li><a href="https://createkko.my.canva.site/home" target="_blank">createkko.my.canva.site</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
 
      <hr style="border: 1px solid #b69d74; ">
 
