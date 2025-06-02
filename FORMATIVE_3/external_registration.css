@@ -1,5 +1,40 @@
 
-.Pers, .Contacts{
+
+.header {
+position: relative;
+width: 100%;
+height: 300px; /* Adjust based on your image */
+overflow: hidden;
+background-image:url(Header.jpg);
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+.header img {
+width: 100%;
+height: 100%;
+object-fit: fill;
+
+}
+
+.forms {
+position: relative;
+top: -100px; /* This pulls the form up to overlap the header */
+background: white;
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+z-index: 10;
+margin: 0 auto;
+width: 60%;
+max-width: 1000px;
+}
+
+.done {
+  margin: 0 auto;
+}
+
+.Pers, .Contacts, .Educ, .file, .additional, .Divider {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -26,13 +61,44 @@
     text-align: center;
 }
 
+.form-note {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: red;
+}
+
+.apply-box {
+  position: absolute;
+  top: 180px; /* Adjust based on your header height */
+  left: 40%;
+  margin: 0 auto;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  font-size: 1rem;
+}
+
+.apply-box select {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+
+
 p{
     padding-top: 3%;
 }
 
 label {
-  line-height: 2;
+  line-height: 1;
   padding-top: 5px;
+  font-family: "Segoe UI", sans-serif;
 }
 
 input[type="text"], input[type="date"], input[type="Status"], input[type="email"], input[type="number"] {
@@ -74,3 +140,10 @@ td input[type="month"] {
     font-size: 14px;
 }
 
+label[for="Pf"]{
+  margin-bottom: 1px;
+}
+
+body{
+  background-color: #292929;
+}
