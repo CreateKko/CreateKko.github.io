@@ -71,7 +71,7 @@ max-width: 1000px;
 
 .apply-box {
   position: absolute;
-  top: 180px; /* Adjust based on your header height */
+  top: 500px; 
   left: 40%;
   margin: 0 auto;
   background: white;
