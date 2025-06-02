@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="description" content="Summative Assessment 1 in IT0043L">
+    <meta name ="Author" content="Aiko Tabako">
+    <title>BEAUTY MILK</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            max-width: 1000px;
+            width: 100%;
+            font-family: "Segoe UI", sans-serif;    
+        }
+
+        th {
+            background-color:#9bc2e6;
+        }
+
+        input{
+            width: 500px;
+        }
+
+        hr.dashed {
+            border: none;
+            border-top: 2px dashed #888;
+        }
+
+        .Inventory  th, .Inventory td {
+            border: 1px solid black;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .subheads{
+            font-family: "Segoe UI", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            text-align: center;
+
+        }
+        
+        .subheads, .rowno3, .rowno4, .rowno7, .rowno8{  
+            background-color: #d9d9d9;
+        }
+
+        .ID, .QTY, .Img{
+            width: 100px;
+        }
+
+        .Names {
+            width: 250px;
+        }
+
+        .rowno1 .Sup {
+            width: 100px;
+            background-color: #ffd966;
+            font-family: "Segoe UI", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .Date{
+            width: 120px;
+        }
+
+        .rowno3 .Img, .rowno4 .Img, .rowno7 .Img, .rowno8 .Img {
+            background-color: white;
+        }
+
+        .rowno2 .QTY, .rowno4 .QTY, .rowno7 .QTY,.rowno8 .QTY {
+            color: red;
+        }
+
+        .Divider {
+            max-width: 1000px;
+            margin: 20px auto; /* Centers the hr and adds space around */
+        }
+
+        .Feedback{
+            margin: 0 auto;
+            max-width: 900px;
+            width: 100%;
+            line-height: 2;
+
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+     <!-- TABLE NAME: Inventory system 
+     TABLE COLUMN 
+      1. ID
+      2. Names
+      3. quantity
+      4. supplier
+      5. date
+      6. image -->
+
+      <!--div.Inventory>table>(tr.subheads>th)+(tr.rowno>td.ID+td.Names+td.QTY+td.Sup+td.Date+td.Img)*9-->
+      
+      <div class="Inventory">
+        <table>
+            <tr>
+                <th colspan="6">INVENTORY SYSTEM</th>
+            </tr>
+            <tr class="subheads">
+                <td class="ID">ID</td>
+                <td class="Names">Names</td>
+                <td class="QTY">Quantity</td>
+                <td class="Sup">Supplier</td>
+                <td class="Date">Date</td>
+                <td class="Img">Image</td>
+            </tr>
+            <tr class="rowno1">
+                <td class="ID">BMICH180</td>
+                <td class="Names">BEAUTY MILK ICHIGO 180G</td>
+                <td class="QTY">230</td>
+                <td class="Sup" rowspan="8">Dear Face</td>
+                <td class="Date" rowspan="2">May 22, 2025</td>
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/products/DearFaceBeautyMilkStrawberry_1024x1024.png?v=1663597832" alt="ichigo 180g" width="100" >
+                </td>
+            </tr>
+            <tr class="rowno2">
+                <td class="ID">BMICH500</td>
+                <td class="Names">BEAUTY MILK ICHIGO 500G</td>
+                <td class="QTY">50</td> <!--low-->
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/files/Dear_Face_Beauty_Milk_in_Strawberry_1024x1024.png?v=1731494973" alt="ichigo 500g" width="100">
+                </td>
+            </tr>
+            <tr class="rowno3">
+                <td class="ID">BMMLN180</td>
+                <td class="Names">BEAUTY MILK MELON 180G</td>
+                <td class="QTY">120</td>
+                <td class="Date" rowspan="2">May 23, 2025</td>
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/products/DearFaceBeautyMilkMelon_1024x1024.png?v=1663597745" alt="Melon 180G" width="100">
+                </td>
+            </tr>
+            <tr class="rowno4">
+                <td class="ID">BMMLN500</td>
+                <td class="Names">BEAUTY MILK MELON 500G</td>
+                <td class="QTY">95</td> <!--low-->
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/files/Dear_Face_Beauty_Milk_Melon_1024x1024.png?v=1731554545" alt="Melon 500G" width="100">
+                </td>
+            </tr>
+            <tr class="rowno5">
+                <td class="ID">BMLCH180</td>
+                <td class="Names">BEAUTY MILK LYCHEE 180G</td>
+                <td class="QTY">320</td>
+                <td class="Date" rowspan="2">May 24, 2025</td>
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/products/DearFaceBeautyMilkLychee_1024x1024.png?v=1663632361" alt="lychee 180G" width="100">
+                </td>
+            </tr>
+            <tr class="rowno6">
+                <td class="ID">BMMTC180</td>
+                <td class="Names">BEAUTY MILK MATCHA LATTE 180G</td>
+                <td class="QTY">150</td>
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/files/DearFaceBeautyMilkMatchaLatteFlavorGreenTea_1024x1024.png?v=1706125260" alt="Matcha latte 180G" width="100">
+                </td>
+            </tr>
+            <tr class="rowno7">
+                <td class="ID">BMBNN180</td>
+                <td class="Names">BEAUTY MILK BANANA 180G</td>
+                <td class="QTY">30</td> <!--low-->
+                <td class="Date" rowspan="2">May 25, 2025</td>
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/products/1_fc611b05-fd2f-4ec0-b1de-604ba449f774_1024x1024.jpg?v=1675343123" alt="banana 180g" width="100">
+                </td>
+            </tr>
+            <tr class="rowno8">
+                <td class="ID">BMMNG180</td>
+                <td class="Names">BEAUTY MILK SWEET MANGO 180G</td>
+                <td class="QTY">10</td> <!--low-->
+                <td class="Img">
+                    <img src="https://pnybeauty.com/cdn/shop/files/DearFaceBeautyMilkMango_1024x1024.png?v=1687602242" alt="Sweet Mango 180G" width="100">
+                </td>
+            </tr>
+        </table>
+      </div>
+
+      <!--div.Divider>hr.dashed-->
+      <div class="Divider">
+        <hr class="dashed">
+      </div>
+
+      <!-- Contacts part
+       1. Name
+       2. Email
+       3. Contact no. 
+       4. Message (big box)-->
+
+    <!-- div.Feedback>form>(label[for=""]{...}+br+input[type="" required]+br)*4+button[type="submit"]{Send}-->
+      <div class="Feedback">
+        <form>
+            
+                <label for="Name">Name*</label><br>
+                <input type="text" required><br>
+                
+                <label for="Email">Email*</label><br>
+                <input type="email" required><br>
+                
+                <label for="number">Contact No.*</label><br>
+                <input type="number" required><br>
+                
+                <label for="message">Message</label><br>
+                <textarea></textarea><br>
+
+                required field*<br>
+                
+                <button type="submit">Send</button>
+            
+        </form>
+      </div>
+    
+</body>
+</html>
