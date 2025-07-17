@@ -18,16 +18,6 @@
             background-color: #FFF9F0; 
         }
 
-        .fade-out {
-            opacity: 0;
-            transition: opacity 0.5s ease; /* Smooth fade-out */
-        }
-
-        .fade-in {
-            opacity: 1 !important;
-            pointer-events: auto;
-        }
-
         .image-container {
             position: relative; 
             width: 1000px; 
@@ -69,6 +59,17 @@
             opacity: 0;
             pointer-events: none; /* prevent clicks while hidden */
             transition: opacity 0.5s ease;
+        }
+
+    
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease; /* Smooth fade-out */
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+            pointer-events: auto;
         }
 </style>
 </head>
