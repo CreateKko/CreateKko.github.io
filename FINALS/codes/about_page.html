@@ -200,5 +200,42 @@
     <img src="https://createkko.github.io/FINALS/Elements/bg_about.png" alt="Frame" class="bg-frame">
   </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const slides = [
+        document.querySelector(".slide-one"),
+        document.querySelector(".slide-two"),
+        document.querySelector(".slide-three"),
+    ];
+
+    let currentSlide = 0;
+
+    const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.classList.add("fade-in");
+            slide.classList.remove("fade-out");
+        } else {
+            slide.classList.remove("fade-in");
+            slide.classList.add("fade-out");
+        }
+        });
+    };
+
+    document.querySelector(".next").addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    });
+
+    document.querySelector(".prev").addEventListener("click", () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    });
+
+    showSlide(currentSlide);
+    });
+</script>
+
+
 </body>
 </html>
