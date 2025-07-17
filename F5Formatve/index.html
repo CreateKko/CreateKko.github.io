@@ -7,12 +7,30 @@
     <title>My Three Closest Friends</title>
 
 <style>
- 
+        .image-container {
+            position: relative; /* Set the container to relative positioning */
+            width: 300px; /* Set a width for the container */
+            height: 300px; /* Set a height for the container */
+        }
+        .folder {
+            width: 100%; /* Make the folder image fill the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .groupfie {
+            position: absolute; /* Position the groupfie image absolutely */
+            top: 0; /* Align it to the top of the container */
+            left: 0; /* Align it to the left of the container */
+            width: 100%; /* Make the groupfie image fill the container */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 1; /* Ensure it appears above the folder image */
+        }
 </style>
 </head>
 
 <body>
-   <img class="folder" src="imgs/folder.png" alt="first element">
-   <img class="folder" src="imgs/groupfie.png" alt="first element">
+    <div class="image-container">
+        <img class="folder" src="imgs/folder.png" alt="first element">
+        <img class="groupfie" src="imgs/groupfie.png" alt="first element">
+    </div>
 </body>
 </html>
