@@ -22,6 +22,7 @@
     }
 
     .bg-frame {
+        z-index: 0;
       width: 100%;
       height: auto;
       display: block;
@@ -44,7 +45,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 2;
+        z-index: 1;
         transform: rotate(-5deg);
     }
 
@@ -67,6 +68,7 @@
 
     .right-panel img{
         position: absolute;
+        z-index: 1;
         width: 99%;
         display: flex;
         align-items: center;
@@ -88,7 +90,7 @@
     .prev, .next{
         cursor: pointer;
         transition: opacity 0.5s ease;
-        z-index: 10px;
+        z-index: 10;
     }
 
     .prev{
