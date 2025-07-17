@@ -18,6 +18,11 @@
             background-color: #FFF9F0; 
         }
 
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease; /* Smooth fade-out */
+        }
+
         .image-container {
             position: relative; 
             width: 1000px; 
@@ -38,6 +43,8 @@
             height: 100%;
             clip-path: inset(0 0 0 -700px); /* top right bottom left */
             position: relative;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
         }
         .groupfie {
             position: absolute; 
@@ -47,6 +54,8 @@
             height: auto; 
             z-index: 1;
             bottom: -500px;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
         }
 </style>
 </head>
@@ -60,5 +69,21 @@
         <h2> MY FRIENDS </h2>
     </div>
   
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const folder = document.querySelector(".folder");
+        const groupfie = document.querySelector(".groupfie");
+
+        folder.addEventListener("click", () => {
+        folder.classList.add("fade-out");
+        groupfie.classList.add("fade-out");
+        });
+
+        groupfie.addEventListener("click", () => {
+        folder.classList.add("fade-out");
+        groupfie.classList.add("fade-out");
+        });
+     });
+    </script>
 </body>
 </html>
