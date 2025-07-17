@@ -8,13 +8,9 @@
         .title {
             visibility: visible; animation-name: fadeInLeft;
             position: relative;
-            height: 47.65vw;
-            width: 67.7%;
+            height: auto;
             margin: 0 auto;
             margin-top: 0px;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: auto;
         }
         .img-fluid {
             width: 200px;
@@ -48,47 +44,73 @@
 
         </div>
     </div>
-    <canvas id="thun" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
 
-    <script>
-        const canvas = document.getElementById('thun');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+  <canvas id="thun" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
 
-        function drawStaticThunder() {
-            const segments = 20;
-            let x = canvas.width / 4;
-            let y = 0;
+<script>
+    const canvas = document.getElementById('thun');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-            for (let i = 0; i < segments; i++) {
-            const nextX = x + (Math.random() - 0.5) * 100;
+    let thunderSegments = [];
+
+    // Seeded random generator
+    function seededRandom(seed) {
+        let x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+    }
+
+    function generateThunder(seed = 42) {
+        thunderSegments = []; // reset
+        const segments = 20;
+        let x = canvas.width / 4;
+        let y = 0;
+
+        for (let i = 0; i < segments; i++) {
+            const nextX = x + (seededRandom(seed + i) - 0.5) * 100;
             const nextY = y + canvas.height / segments;
+            const width = seededRandom(seed + i + 100) * 19 + 1;
 
-            // Randomize line width between 1 and 6
-            ctx.lineWidth = Math.random() * 19 + 1;
-
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.lineTo(nextX, nextY);
-            ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
-            ctx.stroke();
-
+            thunderSegments.push({ x1: x, y1: y, x2: nextX, y2: nextY, width });
             x = nextX;
             y = nextY;
-            }
         }
+    }
 
-        drawStaticThunder();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            drawStaticThunder(); // redraw on resize
+    function drawThunder(offsetY = 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        thunderSegments.forEach(seg => {
+            ctx.beginPath();
+            ctx.moveTo(seg.x1, seg.y1 + offsetY);
+            ctx.lineTo(seg.x2, seg.y2 + offsetY);
+            ctx.lineWidth = seg.width;
+            ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
+            ctx.shadowColor = 'red';
+            ctx.shadowBlur = 20;
+            ctx.stroke();
         });
-    </script>
+    }
 
+    function handleScroll() {
+        const scrollY = window.scrollY;
+        const offset = scrollY * 0.2; // adjust strength here
+        drawThunder(offset);
+    }
 
+    // Use fixed seed (same thunder every time)
+    generateThunder(1234);
+    drawThunder();
+
+    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        generateThunder(1234); // same seed again
+        drawThunder(window.scrollY * 0.2);
+    });
+</script>
 
 </body>
 </html>
