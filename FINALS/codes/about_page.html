@@ -75,6 +75,35 @@
         justify-content: center;
     }
 
+    .slide-one {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 2;
+    }
+
+    .slide-two, .slide-three {
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .prev, .next{
+        cursor: pointer;
+        transition: opacity 0.5s ease;
+    }
+
+    .fade-out {
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .fade-in {
+        opacity: 1 !important;
+        pointer-events: auto;
+        z-index: 2;
+    }
+
 
   </style>
 </head>
@@ -108,6 +137,63 @@
             
         </p>
         </div>
+    </div>
+
+    <div class="slide-two">
+            <!-- Left text content -->
+        <div class="left-panel">
+            <img src="https://createkko.github.io/FINALS/Elements/pokeball.png" alt="Profile Image">
+        </div>
+
+        <!-- Right image or profile -->
+        <div class="right-panel">
+            <img src="https://createkko.github.io/FINALS/Elements/goals.png" alt="title Image">
+        <p>
+            Our passion for Pokémon goes beyond games and characters. 
+            It drives a meaningful understanding of the impact we create for teammates, fans, players, and entire communities. 
+            We're deeply committed to supporting people both within and beyond our organization, through impactful philanthropy, 
+            inclusive benefits, and strong diversity, equity, and inclusion practices rooted in our culture. 
+
+            Through our Corporate Social Responsibility initiatives, we strive to bring the magic of Pokémon to life for children and 
+            families across the globe. Whether it's partnering with equity-driven organizations or creating 
+            joyful experiences for young Trainers, our mission is clear: to make a lasting, positive difference in the lives we touch.
+        </p>
+        <p>
+            
+        </p>
+        </div>
+    </div>
+
+    <div class="slide-three">
+            <!-- Left text content -->
+        <div class="left-panel">
+            <img src="https://createkko.github.io/FINALS/Elements/pokeball.png" alt="Profile Image">
+        </div>
+
+        <!-- Right image or profile -->
+        <div class="right-panel">
+            <img src="https://createkko.github.io/FINALS/Elements/devs.png" alt="title Image">
+        <p>
+            Javin Mayawin, Erika Gualberto, Philip Malayao, and Aiko Tabako, members of the FUntrix, are four student-developers from 
+            FEU Tech, combining technical expertise with creative energy to support the world of Pokémon GO. 
+            Fueled by a shared love for innovation and gameplay, this dynamic team is committed to enhancing user experience, 
+            optimizing community engagement, and contributing fresh ideas to the evolving Pokémon GO universe. 
+            
+            Whether it's through smart design, intuitive features, or real-world integrations, 
+            their mission is to help Trainers everywhere discover new adventures and build meaningful connections one tap at a time.
+        </p>
+        <p>
+            
+        </p>
+        </div>
+    </div>
+
+    <div class="prev">
+        <img src="https://createkko.github.io/FINALS/Elements/prev.png" alt="prev button">
+    </div>
+
+    <div class="next">
+        <img src="https://createkko.github.io/FINALS/Elements/next.png" alt="next button">
     </div>
 
     <!-- Frame background image -->
