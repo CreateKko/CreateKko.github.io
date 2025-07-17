@@ -70,28 +70,39 @@
     <div class="title">
         <h2> MY FRIENDS </h2>
     </div>
+
+    <div class="snd">
+        <h2>PICK ONE TO CHECK</h2>
+        <img src="imgs/a.b.png" alt="" class="a-id">
+        <img src="imgs/d.s.png" alt="" class="d-id">
+        <img src="imgs/p.e.png" alt="" class="p-id"></div>
   
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const folder = document.querySelector(".folder");
         const groupfie = document.querySelector(".groupfie");
+        const title = document.querySelector(".title");
+        const snd = document.querySelector(".snd");
 
         folder.addEventListener("click", () => {
         folder.classList.add("fade-out");
         groupfie.classList.add("fade-out");
         title.classList.add("fade-out");
+        snd.classList.add("fade-in");
         });
 
         groupfie.addEventListener("click", () => {
         folder.classList.add("fade-out");
         groupfie.classList.add("fade-out");
         title.classList.add("fade-out");
+        snd.classList.add("fade-in");
         });
 
         title.addEventListener("click", () => {
         folder.classList.add("fade-out");
         groupfie.classList.add("fade-out");
         title.classList.add("fade-out");
+        snd.classList.add("fade-in");
         });
      });
     </script>
