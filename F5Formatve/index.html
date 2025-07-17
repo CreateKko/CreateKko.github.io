@@ -36,6 +36,8 @@
             font-family: "Archivo", sans-serif;
             font-weight: 400;
             margin-top: -300px;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
         }
 
         .folder {
@@ -77,11 +79,19 @@
         folder.addEventListener("click", () => {
         folder.classList.add("fade-out");
         groupfie.classList.add("fade-out");
+        title.classList.add("fade-out");
         });
 
         groupfie.addEventListener("click", () => {
         folder.classList.add("fade-out");
         groupfie.classList.add("fade-out");
+        title.classList.add("fade-out");
+        });
+
+        title.addEventListener("click", () => {
+        folder.classList.add("fade-out");
+        groupfie.classList.add("fade-out");
+        title.classList.add("fade-out");
         });
      });
     </script>
