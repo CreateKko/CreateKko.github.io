@@ -1,0 +1,53 @@
+body {
+        font-family: 'Archivo', sans-serif;
+        background-color: #ddeff6;
+        text-align: center;
+        margin: 0;
+    }
+
+    h1 {
+    color: #47bfee;
+    }
+
+    .card {
+        border: 2px solid #47bfee;
+        width: 30%;
+        padding: 30px;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .card img {
+        width: 200px;
+    }
+
+    table.dec {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    td.c1 {
+        font-family: 'IBM Plex Sans Thai', sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        padding-left: 100px;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        vertical-align: top;
+    }
+
+    td.c2 {
+        font-family: 'IBM Plex Sans Thai', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 30px 20px 30px 50px;
+        text-align: left;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        color: #47bfee;
+        font-size: 14px;
+        text-decoration: none;
+    }
