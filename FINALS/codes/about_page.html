@@ -15,10 +15,6 @@
       height: 100vh;
     }
 
-     .wrap {
-            visibility: visible; animation-name: fadeInLeft;
-        }
-
     .bgcontain {
       position: relative;
       width: 1000px;
@@ -33,6 +29,9 @@
 
     .title {
       position: absolute;
+      top: 10px;
+      left: 20px;
+      width: 200px;
       z-index: 2;
     }
 
@@ -42,9 +41,15 @@
 
     .left-panel {
       position: absolute;
-      width: 100px;
-      height: auto;
-      
+      top: 100px;
+      left: 60px;
+      width: 45%;
+      height: 60%;
+      color: #000;
+      font-size: 1rem;
+      overflow: auto;
+      padding-right: 10px;
+      z-index: 2;
     }
 
     .right-panel {
@@ -68,97 +73,34 @@
 </head>
 <body>
 
-        <div class="bgcontain">
-            <!-- Title image -->
-            <div class="title">
-                <img src="https://createkko.github.io/FINALS/Elements/title%20small.png" alt="Behind the Screen Title">
-            </div>
+  <div class="bgcontain">
+    <!-- Title image -->
+    <div class="title">
+      <img src="https://createkko.github.io/FINALS/Elements/title%20small.png" alt="Behind the Screen Title">
+    </div>
 
-            <!-- Frame background image -->
-            <img src="https://createkko.github.io/FINALS/Elements/bg_about.png" alt="Frame" class="bg-frame">
-
-            <div class="slide-one">
-                <div class="leftpan">
-                    <img src="https://createkko.github.io/FINALS/Elements/pokelogo.png">
-                </div>
-                <div class="rightpan">
-                    <h1></h1>
-                    <p></p>
-                </div>
-            </div>
-
-            </div>
-            </div>
-
+    <div class="slide-one">
+            <!-- Left text content -->
+        <div class="left-panel">
+            <img src="https://createkko.github.io/FINALS/Elements/d_s.jpg" alt="Profile Image">
         </div>
 
-        
-  <canvas id="thun" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
+        <!-- Right image or profile -->
+        <div class="right-panel">
+            <h2>Meet the Team</h2>
+        <p>
+            We’re the creative minds behind the screen — from brainstorming wild ideas
+            to bringing them to life digitally.
+        </p>
+        <p>
+            Every pixel, every interaction is crafted with love (and a bit of caffeine).
+        </p>
+        </div>
+    </div>
 
-<script>
-    const canvas = document.getElementById('thun');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let thunderSegments = [];
-
-    // Seeded random generator
-    function seededRandom(seed) {
-        let x = Math.sin(seed++) * 10000;
-        return x - Math.floor(x);
-    }
-
-    function generateThunder(seed = 42) {
-        thunderSegments = []; // reset
-        const segments = 20;
-        let x = canvas.width / 4;
-        let y = 0;
-
-        for (let i = 0; i < segments; i++) {
-            const nextX = x + (seededRandom(seed + i) - 0.5) * 100;
-            const nextY = y + canvas.height / segments;
-            const width = seededRandom(seed + i + 100) * 19 + 1;
-
-            thunderSegments.push({ x1: x, y1: y, x2: nextX, y2: nextY, width });
-            x = nextX;
-            y = nextY;
-        }
-    }
-
-    function drawThunder(offsetY = 0) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        thunderSegments.forEach(seg => {
-            ctx.beginPath();
-            ctx.moveTo(seg.x1, seg.y1 + offsetY);
-            ctx.lineTo(seg.x2, seg.y2 + offsetY);
-            ctx.lineWidth = seg.width;
-            ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
-            ctx.shadowColor = 'red';
-            ctx.shadowBlur = 20;
-            ctx.stroke();
-        });
-    }
-
-    function handleScroll() {
-        const scrollY = window.scrollY;
-        const offset = scrollY * 0.2; // adjust strength here
-        drawThunder(offset);
-    }
-
-    // Use fixed seed (same thunder every time)
-    generateThunder(1234);
-    drawThunder();
-
-    window.addEventListener('scroll', handleScroll);
-
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        generateThunder(1234); // same seed again
-        drawThunder(window.scrollY * 0.2);
-    });
-</script>
+    <!-- Frame background image -->
+    <img src="https://createkko.github.io/FINALS/Elements/bg_about.png" alt="Frame" class="bg-frame">
+  </div>
 
 </body>
 </html>
