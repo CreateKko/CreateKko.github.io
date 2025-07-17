@@ -17,12 +17,6 @@
             margin: 0; 
             background-color: #FFF9F0; 
         }
-    
-        .title {
-            font-family: "Archivo", sans-serif;
-            font-weight: 400;
-            margin-top: -50px;
-        }
 
         .image-container {
             position: relative; 
@@ -36,9 +30,17 @@
             margin-top: 10px;
             margin-bottom: 10px;*/
         }
+        .title {
+            font-family: "Archivo", sans-serif;
+            font-weight: 400;
+            margin-top: -50px;
+        }
+
         .folder {
             width: 100%; 
             height: 100%;
+            clip-path: inset(0 0 0 -150px); /* top right bottom left */
+            position: relative;
         }
         .groupfie {
             position: absolute; 
@@ -52,12 +54,12 @@
 </head>
 
 <body>
-    <div class="title">
-        <h2> MY FRIENDS </h2>
-    </div>
     <div class="image-container">
         <img class="folder" src="imgs/folder.png" alt="first element">
         <img class="groupfie" src="imgs/groupfie.png" alt="first element">
+    </div>
+    <div class="title">
+        <h2> MY FRIENDS </h2>
     </div>
   
 </body>
