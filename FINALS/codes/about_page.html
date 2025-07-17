@@ -19,6 +19,15 @@
         .img-fluid {
             width: 200px;
         }
+
+        .thunder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+        }
     </style>
 </head>
 <body>
@@ -35,7 +44,7 @@
 
     </div>
 
-    <canvas id="bg" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
+    <canvas class="thunder"></canvas>
 
     <script>
         const canvas = document.getElementById('bg');
@@ -44,23 +53,28 @@
         canvas.height = window.innerHeight;
 
         function drawStaticThunder() {
+            const segments = 20;
+            let x = canvas.width / 4;
+            let y = 0;
+
+            for (let i = 0; i < segments; i++) {
+            const nextX = x + (Math.random() - 0.5) * 100;
+            const nextY = y + canvas.height / segments;
+
+            // Randomize line width between 1 and 6
+            ctx.lineWidth = Math.random() * 5 + 1;
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(nextX, nextY);
             ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
             ctx.shadowColor = 'red';
             ctx.shadowBlur = 20;
-            ctx.lineWidth = 3;
-
-            let x = canvas.width / 4;
-            let y = 0;
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-
-            for (let i = 0; i < 20; i++) {
-            x += (Math.random() - 0.5) * 100;
-            y += canvas.height / 20;
-            ctx.lineTo(x, y);
-            }
-
             ctx.stroke();
+
+            x = nextX;
+            y = nextY;
+            }
         }
 
         drawStaticThunder();
@@ -70,7 +84,7 @@
             canvas.height = window.innerHeight;
             drawStaticThunder(); // redraw on resize
         });
-    </script>
+</script>
 
 
 
