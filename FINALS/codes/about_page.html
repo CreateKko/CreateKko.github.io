@@ -26,6 +26,42 @@
     <div class="Behind_The-Screen" id="aboutpage">
       <div class="title">
         <img class="img-fluid" src="https://createkko.github.io/FINALS/Elements/pokelogo.png">
-      </div>
+    </div>
+
+    <div class="wrap"></div>
+
+    <div class="swiper metaverse_wrap wow fadeInLeft swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events" style="visibility: visible; animation-name: fadeInLeft;">
+
+
+    </div>
+
+    <canvas id="bg" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function drawLightning() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(255, 0, 0, 0.6)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            let x = canvas.width * Math.random();
+            let y = 0;
+            ctx.moveTo(x, y);
+            for (let i = 0; i < 20; i++) {
+            x += (Math.random() - 0.5) * 100;
+            y += canvas.height / 20;
+            ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+    }
+
+    setInterval(drawLightning, 400);
+    </script>
+
+
 </body>
 </html>
