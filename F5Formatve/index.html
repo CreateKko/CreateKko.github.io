@@ -23,6 +23,11 @@
             transition: opacity 0.5s ease; /* Smooth fade-out */
         }
 
+        .fade-in {
+            opacity: 1 !important;
+            pointer-events: auto;
+        }
+
         .image-container {
             position: relative; 
             width: 1000px; 
@@ -59,16 +64,24 @@
             cursor: pointer;
             transition: opacity 0.5s ease;
         }
+
+        .snd {
+            opacity: 0;
+            pointer-events: none; /* prevent clicks while hidden */
+            transition: opacity 0.5s ease;
+        }
 </style>
 </head>
 
 <body>
-    <div class="image-container">
-        <img class="folder" src="imgs/folder.png" alt="first element">
-        <img class="groupfie" src="imgs/groupfie.png" alt="first element">
-    </div>
-    <div class="title">
-        <h2> MY FRIENDS </h2>
+    <div class="fst">
+        <div class="image-container">
+            <img class="folder" src="imgs/folder.png" alt="first element">
+            <img class="groupfie" src="imgs/groupfie.png" alt="first element">
+        </div>
+        <div class="title">
+            <h2> MY FRIENDS </h2>
+        </div>
     </div>
 
     <div class="snd">
@@ -79,29 +92,11 @@
   
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const folder = document.querySelector(".folder");
-        const groupfie = document.querySelector(".groupfie");
-        const title = document.querySelector(".title");
+        const fst = document.querySelector(".fst");
         const snd = document.querySelector(".snd");
 
-        folder.addEventListener("click", () => {
-        folder.classList.add("fade-out");
-        groupfie.classList.add("fade-out");
-        title.classList.add("fade-out");
-        snd.classList.add("fade-in");
-        });
-
-        groupfie.addEventListener("click", () => {
-        folder.classList.add("fade-out");
-        groupfie.classList.add("fade-out");
-        title.classList.add("fade-out");
-        snd.classList.add("fade-in");
-        });
-
-        title.addEventListener("click", () => {
-        folder.classList.add("fade-out");
-        groupfie.classList.add("fade-out");
-        title.classList.add("fade-out");
+        fst.addEventListener("click", () => {
+        fst.classList.add("fade-out");
         snd.classList.add("fade-in");
         });
      });
