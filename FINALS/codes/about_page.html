@@ -25,58 +25,60 @@
 <body>
     <!--title-->
     <div class="Behind_The-Screen" id="aboutpage">
-      <div class="title">
-        <img class="img-fluid" src="https://createkko.github.io/FINALS/Elements/pokelogo.png">
+        <div class="title">
+            <img class="img-fluid" src="https://createkko.github.io/FINALS/Elements/pokelogo.png">
+        </div>
+
+        <div class="bg">
+            <img src="https://createkko.github.io/FINALS/Elements/bg_about.png" alt="box" class="bgcontain">
+        </div>
+
+        <div class="wrap"></div>
+
+        <div class="swiper metaverse_wrap wow fadeInLeft swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events" style="visibility: visible; animation-name: fadeInLeft;">
+
+
+        </div>
     </div>
+    <canvas id="thun" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
 
-    <div class="wrap"></div>
+    <script>
+        const canvas = document.getElementById('thun');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    <div class="swiper metaverse_wrap wow fadeInLeft swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events" style="visibility: visible; animation-name: fadeInLeft;">
+        function drawStaticThunder() {
+            const segments = 20;
+            let x = canvas.width / 4;
+            let y = 0;
 
+            for (let i = 0; i < segments; i++) {
+            const nextX = x + (Math.random() - 0.5) * 100;
+            const nextY = y + canvas.height / segments;
 
-    </div>
+            // Randomize line width between 1 and 6
+            ctx.lineWidth = Math.random() * 19 + 1;
 
-<canvas id="thun" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh;"></canvas>
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(nextX, nextY);
+            ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
+            ctx.stroke();
 
-<script>
-  const canvas = document.getElementById('thun');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+            x = nextX;
+            y = nextY;
+            }
+        }
 
-  function drawStaticThunder() {
-    const segments = 20;
-    let x = canvas.width / 4;
-    let y = 0;
+        drawStaticThunder();
 
-    for (let i = 0; i < segments; i++) {
-      const nextX = x + (Math.random() - 0.5) * 100;
-      const nextY = y + canvas.height / segments;
-
-      // Randomize line width between 1 and 6
-      ctx.lineWidth = Math.random() * 5 + 1;
-
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(nextX, nextY);
-      ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
-      ctx.shadowColor = 'red';
-      ctx.shadowBlur = 20;
-      ctx.stroke();
-
-      x = nextX;
-      y = nextY;
-    }
-  }
-
-  drawStaticThunder();
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    drawStaticThunder(); // redraw on resize
-  });
-</script>
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawStaticThunder(); // redraw on resize
+        });
+    </script>
 
 
 
