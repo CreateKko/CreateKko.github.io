@@ -43,24 +43,35 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        function drawLightning() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = 'rgba(255, 0, 0, 0.6)';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            let x = canvas.width * Math.random();
+        function drawStaticThunder() {
+            ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
+            ctx.shadowColor = 'red';
+            ctx.shadowBlur = 20;
+            ctx.lineWidth = 3;
+
+            let x = canvas.width / 4;
             let y = 0;
+            ctx.beginPath();
             ctx.moveTo(x, y);
+
             for (let i = 0; i < 20; i++) {
             x += (Math.random() - 0.5) * 100;
             y += canvas.height / 20;
             ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-    }
+            }
 
-    setInterval(drawLightning, 400);
+            ctx.stroke();
+        }
+
+        drawStaticThunder();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawStaticThunder(); // redraw on resize
+        });
     </script>
+
 
 
 </body>
