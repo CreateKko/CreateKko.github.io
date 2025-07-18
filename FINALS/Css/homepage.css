@@ -309,7 +309,7 @@ body {
     position: absolute;
     top: 354px;
     left: -257px;
-    width: 113%;
+    width: 93%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -385,8 +385,8 @@ body {
 }
 
 #about-prev {
-    top: -141px;
-    left: 64px;
+    top: -138px;
+    left: 69px;
     width: 64%;
     /* height: 30%; */
     display: flex;
