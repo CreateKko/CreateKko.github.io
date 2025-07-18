@@ -302,13 +302,13 @@ body {
 
 .title img {
   pointer-events: none;
-  width: 110%;
+  width: 149%;
 }
 
 .left-panel {
     position: absolute;
     top: 354px;
-    left: -238px;
+    left: -257px;
     width: 113%;
     display: flex;
     align-items: center;
@@ -385,8 +385,8 @@ body {
 }
 
 #about-prev {
-    top: -128px;
-    left: 0;
+    top: -141px;
+    left: 64px;
     width: 64%;
     /* height: 30%; */
     display: flex;
@@ -403,4 +403,4 @@ body {
     align-items: center;
     justify-content: center;
 }
-}
+
