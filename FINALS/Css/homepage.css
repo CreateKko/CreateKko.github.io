@@ -263,151 +263,37 @@ body {
 
 /*css of about tab*/
 
-    #about {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .bgcontain {
-      position: relative;
-      width: 1000px;
-      height: auto;
-    }
-
-    .bg-frame {
-        z-index: 0;
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .title {
-      position: absolute;
-      z-index: 2;
-    }
-
-    .title img {
-        pointer-events: none;
-      width: 100%;
-    }
-
-    .left-panel {
-        position: absolute;
-        top: 190px;
-        left: -55px;
-        width: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-        transform: rotate(-5deg);
-    }
-
-    .left-panel img {
-        pointer-events: none;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .scroll-text {
-        position: absolute;
-        top: 289px;
-        right: 149px;
-        width: 15%;
-        height: 33%;
-        overflow-y: auto;
-        font-size: 12px;
-        color: #000;
-    }
-
-    .right-panel img{
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        width: 99%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .slide-one {
-        opacity: 1;
-        pointer-events: auto;
-        z-index: 2;
-    }
-
-    .slide-two, .slide-three {
-        opacity: 0;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    #about-prev, #about-next{
-        cursor: pointer;
-        transition: opacity 0.5s ease;
-        z-index: 10;
-    }
-
-    #about-prev{
-        position: absolute;
-        top: 289px;
-        width: 64%;
-        height: 30%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #about-next {
-        position: absolute;
-        top: 289px;
-        width: 18%;
-        height: 25%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .fade-out {
-        opacity: 0;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .fade-in {
-        opacity: 1 !important;
-        pointer-events: auto;
-        z-index: 2;
-    }
-
-    .slide-one, .slide-two, .slide-three {
-        transition: opacity 0.5s ease;
-    }
-
-    /* Styles for about_page.html content */
-.about-page-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff9f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+#about {
+  /* Keep the background image for the carousel slide */
+  background: url('Animated GIF.gif') no-repeat center center / cover;
+  /* Ensure the content inside is centered */
+  display: flex; /* Add this */
+  justify-content: center; /* Add this */
+  align-items: center; /* Add this */
+  /* Remove the about-text styles if you're using bgcontain directly */
+  padding: 0; /* Remove padding if bgcontain handles it */
 }
+
+/* Styles for about_page.html content - ensure these are correctly applied */
+/* These styles should apply to elements *within* the #about carousel slide */
 
 .bgcontain {
   position: relative;
-  width: 1000px;
+  width: 1000px; /* Or adjust as needed for responsiveness */
   height: auto;
+  /* Ensure it's centered within its parent (#about) if #about is flex container */
+  display: flex; /* Add this to center its children if needed */
+  justify-content: center; /* Add this */
+  align-items: center; /* Add this */
+  flex-direction: column; /* Add this if children are stacked vertically */
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
 }
 
+/* The rest of your .bgcontain children styles are fine for internal positioning */
 .bg-frame {
-    z-index: 0;
+  z-index: 0;
   width: 100%;
   height: auto;
   display: block;
@@ -416,17 +302,21 @@ body {
 .title {
   position: absolute;
   z-index: 2;
+  /* Adjust positioning relative to .bgcontain */
+  top: 0; /* Example: position at the top of bgcontain */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .title img {
-    pointer-events: none;
+  pointer-events: none;
   width: 100%;
 }
 
 .left-panel {
     position: absolute;
-    top: 190px;
-    left: -55px;
+    top: 190px; /* Relative to .bgcontain */
+    left: -55px; /* Relative to .bgcontain */
     width: 80%;
     display: flex;
     align-items: center;
@@ -436,7 +326,7 @@ body {
 }
 
 .left-panel img {
-    pointer-events: none;
+  pointer-events: none;
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -444,8 +334,8 @@ body {
 
 .scroll-text {
     position: absolute;
-    top: 289px;
-    right: 149px;
+    top: 289px; /* Relative to .bgcontain */
+    right: 149px; /* Relative to .bgcontain */
     width: 15%;
     height: 33%;
     overflow-y: auto;
@@ -461,44 +351,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Adjust positioning relative to .bgcontain */
+    top: 0; /* Example: align to top of bgcontain */
+    right: 0; /* Example: align to right of bgcontain */
 }
 
-.slide-one {
+.slide-one, .slide-two, .slide-three {
+    /* These slides are children of .bgcontain, so their positioning is relative to it */
+    position: absolute; /* Make them absolute within .bgcontain */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Default to hidden */
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.slide-one.fade-in { /* Initial active slide */
     opacity: 1;
     pointer-events: auto;
     z-index: 2;
-}
-
-.slide-two, .slide-three {
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.prev, .next{
-    cursor: pointer;
-    transition: opacity 0.5s ease;
-    z-index: 10;
-}
-
-.prev{
-    position: absolute;
-    top: 289px;
-    width: 64%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.next {
-    position: absolute;
-    top: 289px;
-    width: 18%;
-    height: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .fade-out {
@@ -513,6 +387,37 @@ body {
     z-index: 2;
 }
 
-.slide-one, .slide-two, .slide-three {
+#about-prev, #about-next{
+    cursor: pointer;
     transition: opacity 0.5s ease;
+    z-index: 10; /* Ensure buttons are on top */
+    position: absolute; /* Position relative to .bgcontain */
+}
+
+#about-prev{
+    top: 289px; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    width: 64%; /* Adjust as needed */
+    height: 30%; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-next {
+    top: 289px; /* Adjust as needed */
+    right: 0; /* Adjust as needed */
+    width: 18%; /* Adjust as needed */
+    height: 25%; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the body styles from about_page.html are not conflicting with the main body */
+/* The .about-page-body class is not used in the combined HTML, so these styles won't apply directly */
+/* If you want the background-color: #fff9f0 for the about section, apply it to #about or .bgcontain */
+/* For example: */
+#about .bgcontain {
+    background-color: #fff9f0; /* Apply this if you want the light background for the content area */
 }
