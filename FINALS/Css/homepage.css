@@ -286,17 +286,18 @@ body {
 
 .bg-frame {
   z-index: 0;
-  width: 100%;
+  width: 143%;
   height: auto;
   display: block;
 }
 
 .title {
-    position: absolute;
+      position: absolute;
     z-index: 2;
-    top: 216px;
+    top: 78px;
+    /* right: 15px; */
     /* left: 50%; */
-    transform: translateX(-3%);
+    transform: translateX(-18%);
 }
 
 .title img {
@@ -306,9 +307,9 @@ body {
 
 .left-panel {
     position: absolute;
-    top: 415px;
-    left: -55px;
-    width: 80%;
+    top: 354px;
+    left: -238px;
+    width: 113%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -325,10 +326,10 @@ body {
 
 .scroll-text {
     position: absolute;
-    top: 518px; 
-    right: 149px; 
-    width: 15%;
-    height: 22%;
+    top: 541px;
+    right: 13px;
+    width: 20%;
+    height: 28%;
     overflow-y: auto;
     font-size: 12px;
     color: #000;
@@ -338,12 +339,12 @@ body {
     position: absolute;
     pointer-events: none;
     z-index: 1;
-    width: 99%;
+    width: 135%;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 220px; 
-    right: 0; 
+    top: 141px;
+    right: -187px;
 }
 
 .slide-one, .slide-two, .slide-three {
@@ -383,7 +384,7 @@ body {
     position: absolute;
 }
 
-about-prev {
+#about-prev {
     top: -128px;
     left: 0;
     width: 64%;
@@ -395,7 +396,7 @@ about-prev {
 
 #about-next {
     top: -149px;
-    /* right: 0; */
+    right: -153px;
     width: 180%;
     /* height: 26%; */
     display: flex;
