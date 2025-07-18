@@ -264,34 +264,26 @@ body {
 /*css of about tab*/
 
 #about {
-  /* Keep the background image for the carousel slide */
-  background: url('Animated GIF.gif') no-repeat center center / cover;
-  /* Ensure the content inside is centered */
-  display: flex; /* Add this */
-  justify-content: center; /* Add this */
-  align-items: center; /* Add this */
-  /* Remove the about-text styles if you're using bgcontain directly */
-  padding: 0; /* Remove padding if bgcontain handles it */
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 0; 
 }
 
-/* Styles for about_page.html content - ensure these are correctly applied */
-/* These styles should apply to elements *within* the #about carousel slide */
 
 .bgcontain {
   position: relative;
-  width: 1000px; /* Or adjust as needed for responsiveness */
+  width: 1000px; 
   height: auto;
-  /* Ensure it's centered within its parent (#about) if #about is flex container */
-  display: flex; /* Add this to center its children if needed */
-  justify-content: center; /* Add this */
-  align-items: center; /* Add this */
-  flex-direction: column; /* Add this if children are stacked vertically */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   height: 100vh;
 }
 
-/* The rest of your .bgcontain children styles are fine for internal positioning */
 .bg-frame {
   z-index: 0;
   width: 100%;
@@ -300,23 +292,22 @@ body {
 }
 
 .title {
-  position: absolute;
-  z-index: 2;
-  /* Adjust positioning relative to .bgcontain */
-  top: 0; /* Example: position at the top of bgcontain */
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+    top: 216px;
+    /* left: 50%; */
+    transform: translateX(-3%);
 }
 
 .title img {
   pointer-events: none;
-  width: 100%;
+  width: 110%;
 }
 
 .left-panel {
     position: absolute;
-    top: 190px; /* Relative to .bgcontain */
-    left: -55px; /* Relative to .bgcontain */
+    top: 415px;
+    left: -55px;
     width: 80%;
     display: flex;
     align-items: center;
@@ -334,10 +325,10 @@ body {
 
 .scroll-text {
     position: absolute;
-    top: 289px; /* Relative to .bgcontain */
-    right: 149px; /* Relative to .bgcontain */
+    top: 518px; 
+    right: 149px; 
     width: 15%;
-    height: 33%;
+    height: 22%;
     overflow-y: auto;
     font-size: 12px;
     color: #000;
@@ -351,25 +342,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Adjust positioning relative to .bgcontain */
-    top: 0; /* Example: align to top of bgcontain */
-    right: 0; /* Example: align to right of bgcontain */
+    top: 220px; 
+    right: 0; 
 }
 
 .slide-one, .slide-two, .slide-three {
-    /* These slides are children of .bgcontain, so their positioning is relative to it */
-    position: absolute; /* Make them absolute within .bgcontain */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0; /* Default to hidden */
+    opacity: 0; 
     pointer-events: none;
     z-index: 1;
     transition: opacity 0.5s ease;
 }
 
-.slide-one.fade-in { /* Initial active slide */
+.slide-one.fade-in {
     opacity: 1;
     pointer-events: auto;
     z-index: 2;
@@ -390,25 +379,25 @@ body {
 #about-prev, #about-next{
     cursor: pointer;
     transition: opacity 0.5s ease;
-    z-index: 10; /* Ensure buttons are on top */
-    position: absolute; /* Position relative to .bgcontain */
+    z-index: 4;
+    position: absolute;
 }
 
-#about-prev{
-    top: 289px; /* Adjust as needed */
-    left: 0; /* Adjust as needed */
-    width: 64%; /* Adjust as needed */
-    height: 30%; /* Adjust as needed */
+about-prev {
+    top: -128px;
+    left: 0;
+    width: 64%;
+    /* height: 30%; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #about-next {
-    top: 289px; /* Adjust as needed */
-    right: 0; /* Adjust as needed */
-    width: 18%; /* Adjust as needed */
-    height: 25%; /* Adjust as needed */
+    top: -149px;
+    /* right: 0; */
+    width: 180%;
+    /* height: 26%; */
     display: flex;
     align-items: center;
     justify-content: center;
