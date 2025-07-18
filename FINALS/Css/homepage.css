@@ -347,13 +347,13 @@ body {
         z-index: 1;
     }
 
-    .prev, .next{
+    #about-prev, #about-next{
         cursor: pointer;
         transition: opacity 0.5s ease;
         z-index: 10;
     }
 
-    .prev{
+    #about-prev{
         position: absolute;
         top: 289px;
         width: 64%;
@@ -363,7 +363,7 @@ body {
         justify-content: center;
     }
 
-    .next {
+    #about-next {
         position: absolute;
         top: 289px;
         width: 18%;
