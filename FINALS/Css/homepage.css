@@ -413,11 +413,4 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-/* Ensure the body styles from about_page.html are not conflicting with the main body */
-/* The .about-page-body class is not used in the combined HTML, so these styles won't apply directly */
-/* If you want the background-color: #fff9f0 for the about section, apply it to #about or .bgcontain */
-/* For example: */
-#about .bgcontain {
-    background-color: #fff9f0; /* Apply this if you want the light background for the content area */
 }
