@@ -1,0 +1,830 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #111, #1f1f1f);
+  padding: 2rem;
+}
+
+.carousel-nav {
+  background: rgba(255, 204, 0, 0.85);
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  color: #000;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.carousel-nav:hover {
+  background: #ffcc00;
+}
+
+.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.next {
+  position: absolute;
+  right: 10px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pikachu img {
+  width: 100%;
+  z-index: 2;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.lightning {
+  width: 4px;
+  height: 100px;
+  background: yellow;
+  animation: blink 0.4s infinite;
+  margin-top: 1rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.download-links img {
+  width: 140px;
+  margin: 1rem;
+  filter: drop-shadow(0 0 10px #ffcc00);
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  text-align: center;
+}
+
+.form input,
+.form select {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.form button {
+  background: #ffcc00;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background: #ffe066;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: #2a75bb;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  width: 220px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+}
+
+.pokemon-section {
+  padding: 3rem 1rem;
+  background: #121212;
+  text-align: center;
+}
+
+#search-box {
+  width: 60%;
+  padding: 0.75rem;
+  margin: 1rem auto;
+  border-radius: 8px;
+  border: none;
+  background: #1e1e1e;
+  color: #fff;
+  outline: none;
+}
+
+.pokemon-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pokemon-card {
+  background: #1b1b1b;
+  padding: 1rem;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  width: 160px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+.trainer-id {
+  background: #0d0d0d;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #ffcc00;
+}
+
+.trainer-id p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+#home {
+  background: url('/image/Post\ Malone\ Lights\ GIF\ by\ Pokémon.gif') no-repeat center center / cover;
+}
+
+#login {
+  background: url('/image/Post\ Malone\ GIF\ by\ Pokémon.gif') no-repeat center center / cover;
+}
+
+#register {
+  background: url('/image/Kick\ Bea\ GIF\ by\ Pokémon.gif') no-repeat center center / cover;
+}
+
+#about {
+  background: url('/image/Animated\ GIF.gif') no-repeat center center / cover;
+}
+
+#products {
+  background: url('/image/Pokemon\ Anime\ Badges\ GIF\ by\ Pokémon.gif') no-repeat center center / cover;
+}
+
+#login .form,
+#register .form {
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.pokemon-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.shop-body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.shop-header {
+  background-color: #2a75bb;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.shop-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark-logo {
+  height: 26px;
+  width: 26px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider.small {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider.small::before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider.small {
+  background-color: #ffcb05;
+}
+
+.switch input:checked + .slider.small::before {
+  transform: translateX(18px);
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a.active-tab {
+  border-bottom: 2px solid #ffcb05;
+}
+
+.sub-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background: #eaeaea;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.sub-tabs button {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.sub-tabs button:hover {
+  background: #f4f4f4;
+}
+
+.cart-icon-btn {
+  background: #ffcb05;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-icon-btn:hover {
+  background-color: #f2b600;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  color: black;
+}
+
+.shop-product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.shop-product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.shop-product-card button {
+  margin-top: 0.5rem;
+  background: #2a75bb;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-product-card button:hover {
+  background: #1d5fa3;
+}
+
+.category {
+  display: none;
+}
+
+.category.active {
+  display: block;
+  padding-left: 15px;
+}
+
+#cart-panel {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.shop-footer {
+  background-color: #2a75bb;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+#item-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+#item-modal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  transform: scale(0.9);
+  animation: scaleUp 0.3s ease-in-out forwards;
+}
+
+#item-modal img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 1rem;
+  cursor: zoom-in;
+}
+
+#item-modal img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes scaleUp {
+  to {transform: scale(1);}
+}
+
+.shop-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.shop-button:hover {
+  background-color: #ffe066;
+}
+
+.shop-section {
+  display: none;
+  color: black;
+}
+
+.shop-section.active {
+  display: block;
+  background-color: #f9f9f9;
+}
+
+
+/* Base styles for the about section */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; /* Ensures nothing spills out */
+  background-color: #fff9f0; /* Match body background */
+}
+
+/* Main container for the about content */
+.bgcontain {
+  position: relative; /* Crucial for absolute positioning of children */
+  width: 90vw; /* Use viewport width for responsiveness */
+  max-width: 1200px; /* Limit maximum size for large screens */
+  height: 0; /* Set height to 0 to use padding-bottom for aspect ratio */
+  padding-bottom: 60%; /* Aspect ratio of your bg_about.png (e.g., 600px height / 1000px width = 0.6 = 60%) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* Add a background color or image if this is meant to be a visible container */
+}
+
+/* The background frame image */
+.bg-frame {
+  position: absolute; /* Position absolutely within bgcontain */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Fill the bgcontain's padded height */
+  background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png');
+  background-size: 100% 100%; /* Stretch to fill */
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none; /* Allow clicks through to elements below */
+}
+
+/* Inner container for all absolutely positioned elements */
+/* This div will act as the positioning context for title, panels, arrows */
+/* It should be positioned absolutely over the bg-frame */
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox for centering/alignment within this layer */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure these elements are above the bg-frame */
+}
+
+
+/* Title image */
+.title {
+  position: absolute;
+  z-index: 2;
+  top: 5%; /* Percentage from the top of its positioning context */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%; /* Percentage width relative to its parent */
+  max-width: 800px; /* Max width for the title */
+}
+
+.title img {
+  pointer-events: none;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Left panel content */
+.left-panel {
+  position: absolute;
+  top: 30%; /* Percentage from the top */
+  left: 5%; /* Percentage from the left */
+  width: 40%; /* Percentage width */
+  max-width: 400px; /* Max width for the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transform: rotate(-5deg); /* Keep the rotation */
+}
+
+.left-panel img {
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Right panel content */
+.right-panel {
+  position: absolute;
+  top: 20%; /* Percentage from the top */
+  right: 5%; /* Percentage from the right */
+  width: 45%; /* Percentage width */
+  max-width: 500px; /* Max width for the image */
+  height: auto;
+  z-index: 1;
+}
+
+.right-panel img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Scrollable text area */
+.scroll-text {
+  position: absolute;
+  top: 45%; /* Position relative to the right-panel's top */
+  right: 10%; /* Position relative to the right-panel's right */
+  width: 70%; /* Percentage width relative to right-panel */
+  height: 40%; /* Percentage height relative to right-panel */
+  overflow-y: auto;
+  font-size: clamp(10px, 1.5vw, 14px); /* Responsive font size */
+  color: #000;
+  line-height: 1.4;
+  padding-right: 10px; /* For scrollbar space */
+}
+
+/* Slide Styles (assuming these are direct children of overlay-content) */
+.slide-one, .slide-two, .slide-three {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1; /* Lower z-index than active slide */
+  transition: opacity 0.5s ease;
+  /* Ensure content within slides is positioned relative to the slide itself */
+  /* or use flex/grid within each slide if content needs to be centered/aligned */
+}
+
+.slide-one.fade-in,
+.slide-two.fade-in,
+.slide-three.fade-in {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2; /* Higher z-index for the active slide */
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+/* Navigation Arrows */
+#about-prev, #about-next {
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  z-index: 4; /* Ensure arrows are always on top */
+  position: absolute;
+  width: 8%; /* Percentage width relative to overlay-content */
+  max-width: 80px; /* Max size for arrows */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#about-prev {
+  left: 2%; /* Percentage from the left of overlay-content */
+}
+
+#about-next {
+  right: 2%; /* Percentage from the right of overlay-content */
+}
+
+/* Mobile layout (adjust breakpoints as needed) */
+@media (max-width: 767px) {
+  .bgcontain {
+    width: 95vw; /* Take up more width on small screens */
+    padding-bottom: 120%; /* Adjust aspect ratio for mobile if needed, e.g., taller */
+    height: auto; /* Let height be determined by padding-bottom */
+  }
+
+  .bg-frame {
+    /* On mobile, the frame might need to be less prominent or scaled differently */
+    background-size: contain; /* Ensure the image fits within the frame */
+    background-position: center; /* Center the background image */
+  }
+
+  .overlay-content {
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align to the top */
+    padding-top: 5%; /* Add some top padding */
+  }
+
+  .title {
+    position: relative; /* Change to relative for stacking */
+    width: 80%;
+    margin-top: 1rem;
+    top: auto; /* Remove absolute top */
+    left: auto; /* Remove absolute left */
+    transform: none; /* Remove transform */
+  }
+
+  .left-panel {
+    position: relative; /* Change to relative for stacking */
+    width: 60%;
+    margin-top: 1rem;
+    top: auto; /* Remove absolute top */
+    left: auto; /* Remove absolute left */
+    transform: none; /* Remove rotation */
+  }
+
+  .right-panel {
+    display: none; /* Hide right panel on mobile */
+  }
+
+  .scroll-text {
+    position: relative; /* Change to relative for stacking */
+    width: 90%; /* Take up more width */
+    font-size: clamp(8px, 2.5vw, 12px); /* Smaller font for mobile */
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.8); /* Add background for readability */
+    margin-top: 1rem;
+    top: auto; /* Remove absolute top */
+    right: auto; /* Remove absolute right */
+    height: auto; /* Auto height for content */
+  }
+
+  #about-prev, #about-next {
+    position: absolute; /* Keep absolute for arrows */
+    width: 15%; /* Larger arrows for easier tapping */
+    top: 90%; /* Position at the bottom */
+    transform: translateY(-50%);
+  }
+
+  #about-prev {
+    left: 10%;
+  }
+
+  #about-next {
+    right: 10%;
+  }
+}
+
+/* Tablet styles (example breakpoint) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .bgcontain {
+    width: 90vw;
+    max-width: 900px;
+  }
+
+  .title {
+    top: 8%;
+    width: 80%;
+  }
+
+  .left-panel {
+    top: 25%;
+    left: 8%;
+    width: 35%;
+    transform: rotate(-3deg);
+  }
+
+  .right-panel {
+    top: 15%;
+    right: 8%;
+    width: 40%;
+  }
+
+  .scroll-text {
+    top: 40%;
+    right: 15%;
+    width: 60%;
+    height: 45%;
+    font-size: clamp(11px, 1.8vw, 13px);
+  }
+
+  #about-prev, #about-next {
+    width: 6%;
+  }
+}
