@@ -143,11 +143,11 @@ body {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.6;
-  border: 2px solid #ffcc00; 
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); 
-  padding: 2rem; 
-  border-radius: 1rem; 
-  background: rgba(255, 255, 255, 0.06); 
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
 }
 
@@ -560,7 +560,8 @@ body {
   position: relative; /* Crucial for absolute positioning of children */
   width: 90vw; /* Use viewport width for responsiveness */
   max-width: 1200px; /* Limit maximum size for large screens */
-  height: auto; /* Height will be determined by content or aspect ratio */
+  height: 0; /* Set height to 0 to use padding-bottom for aspect ratio */
+  padding-bottom: 60%; /* Aspect ratio of your bg_about.png (e.g., 600px height / 1000px width = 0.6 = 60%) */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -570,10 +571,11 @@ body {
 
 /* The background frame image */
 .bg-frame {
-  position: relative; /* Changed to relative to allow aspect-ratio to work */
+  position: absolute; /* Position absolutely within bgcontain */
+  top: 0;
+  left: 0;
   width: 100%;
-  padding-bottom: 60%; /* Adjust this percentage to match the aspect ratio of your bg_about.png image (height / width * 100) */
-  height: 0; /* Required for padding-bottom trick */
+  height: 100%; /* Fill the bgcontain's padded height */
   background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png');
   background-size: 100% 100%; /* Stretch to fill */
   background-repeat: no-repeat;
@@ -584,7 +586,7 @@ body {
 /* Inner container for all absolutely positioned elements */
 /* This div will act as the positioning context for title, panels, arrows */
 /* It should be positioned absolutely over the bg-frame */
-.bgcontain > div:not(.bg-frame) { /* Target direct children that are not bg-frame */
+.overlay-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -666,7 +668,7 @@ body {
   padding-right: 10px; /* For scrollbar space */
 }
 
-/* Slide Styles (assuming these are direct children of bgcontain) */
+/* Slide Styles (assuming these are direct children of overlay-content) */
 .slide-one, .slide-two, .slide-three {
   position: absolute;
   top: 0;
@@ -705,38 +707,38 @@ body {
   transition: opacity 0.5s ease;
   z-index: 4; /* Ensure arrows are always on top */
   position: absolute;
-  width: 8%; /* Percentage width relative to bgcontain */
+  width: 8%; /* Percentage width relative to overlay-content */
   max-width: 80px; /* Max size for arrows */
   top: 50%;
   transform: translateY(-50%);
 }
 
 #about-prev {
-  left: 2%; /* Percentage from the left of bgcontain */
+  left: 2%; /* Percentage from the left of overlay-content */
 }
 
 #about-next {
-  right: 2%; /* Percentage from the right of bgcontain */
+  right: 2%; /* Percentage from the right of overlay-content */
 }
 
 /* Mobile layout (adjust breakpoints as needed) */
 @media (max-width: 767px) {
   .bgcontain {
     width: 95vw; /* Take up more width on small screens */
-    height: 90vh; /* Give it a fixed height for mobile */
-    flex-direction: column;
-    justify-content: flex-start;
+    padding-bottom: 120%; /* Adjust aspect ratio for mobile if needed, e.g., taller */
+    height: auto; /* Let height be determined by padding-bottom */
   }
 
   .bg-frame {
     /* On mobile, the frame might need to be less prominent or scaled differently */
-    width: 150%; /* Make it larger to fill background */
-    height: 100%; /* Fill height */
-    opacity: 0.5; /* Make it semi-transparent */
-    position: absolute; /* Keep it absolute */
-    top: 0;
-    left: -25%; /* Adjust to center if width is > 100% */
-    padding-bottom: 0; /* Remove padding-bottom trick if fixed height */
+    background-size: contain; /* Ensure the image fits within the frame */
+    background-position: center; /* Center the background image */
+  }
+
+  .overlay-content {
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align to the top */
+    padding-top: 5%; /* Add some top padding */
   }
 
   .title {
@@ -826,4 +828,3 @@ body {
     width: 6%;
   }
 }
-
