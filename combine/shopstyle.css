@@ -702,7 +702,7 @@ body {
   }
 
   .title {
-    top: 5%; /* Adjust top position relative to parent */
+    top: 10%; /* Adjust top position relative to parent */
     width: 120%; /* Scale down title image */
   }
 
