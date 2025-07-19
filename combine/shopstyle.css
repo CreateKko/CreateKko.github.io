@@ -543,7 +543,7 @@ body {
 }
 
 
-/* Base styles */
+/* Base styles for the about section */
 #about {
   display: flex;
   justify-content: center;
@@ -551,54 +551,81 @@ body {
   padding: 0;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Ensures nothing spills out */
+  background-color: #fff9f0; /* Match body background */
 }
 
+/* Main container for the about content */
 .bgcontain {
-  position: relative;
-  width: 80vw;
-  height: auto;
+  position: relative; /* Crucial for absolute positioning of children */
+  width: 90vw; /* Use viewport width for responsiveness */
+  max-width: 1200px; /* Limit maximum size for large screens */
+  height: auto; /* Height will be determined by content or aspect ratio */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 80vw;
+  /* Add a background color or image if this is meant to be a visible container */
 }
 
+/* The background frame image */
 .bg-frame {
-  position: absolute;
+  position: relative; /* Changed to relative to allow aspect-ratio to work */
   width: 100%;
-  height: auto;
-  top: -715px;
-  left: -16px;
+  padding-bottom: 60%; /* Adjust this percentage to match the aspect ratio of your bg_about.png image (height / width * 100) */
+  height: 0; /* Required for padding-bottom trick */
+  background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png');
+  background-size: 100% 100%; /* Stretch to fill */
+  background-repeat: no-repeat;
   z-index: 0;
+  pointer-events: none; /* Allow clicks through to elements below */
 }
 
+/* Inner container for all absolutely positioned elements */
+/* This div will act as the positioning context for title, panels, arrows */
+/* It should be positioned absolutely over the bg-frame */
+.bgcontain > div:not(.bg-frame) { /* Target direct children that are not bg-frame */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox for centering/alignment within this layer */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure these elements are above the bg-frame */
+}
+
+
+/* Title image */
 .title {
   position: absolute;
   z-index: 2;
-  top: -700px; /* Adjusted to fit within the bg-frame */
+  top: 5%; /* Percentage from the top of its positioning context */
   left: 50%;
   transform: translateX(-50%);
-  width: 100%; /* Adjusted width to fit within the bg-frame */
-  max-width: 1500px;
+  width: 70%; /* Percentage width relative to its parent */
+  max-width: 800px; /* Max width for the title */
 }
 
 .title img {
   pointer-events: none;
   width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
 
+/* Left panel content */
 .left-panel {
   position: absolute;
-  top: 50%; /* Centered vertically */
-  left: 5%; /* Adjusted to fit within the bg-frame */
-  width: 30%; /* Adjusted width to fit within the bg-frame */
+  top: 30%; /* Percentage from the top */
+  left: 5%; /* Percentage from the left */
+  width: 40%; /* Percentage width */
+  max-width: 400px; /* Max width for the image */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transform: rotate(-10deg);
+  transform: rotate(-5deg); /* Keep the rotation */
 }
 
 .left-panel img {
@@ -608,22 +635,13 @@ body {
   border-radius: 10px;
 }
 
-.scroll-text {
-  position: absolute;
-  top: 60%; /* Adjusted to fit within the bg-frame */
-  right: 10%; /* Adjusted to fit within the bg-frame */
-  width: 16%;
-  height: auto; /* Changed to auto for better responsiveness */
-  font-size: 14px;
-  color: #000;
-  line-height: 1.4;
-}
-
+/* Right panel content */
 .right-panel {
   position: absolute;
-  top: 50%; /* Centered vertically */
-  right: 5%; /* Adjusted to fit within the bg-frame */
-  width: 30%; /* Adjusted width to fit within the bg-frame */
+  top: 20%; /* Percentage from the top */
+  right: 5%; /* Percentage from the right */
+  width: 45%; /* Percentage width */
+  max-width: 500px; /* Max width for the image */
   height: auto;
   z-index: 1;
 }
@@ -634,124 +652,178 @@ body {
   pointer-events: none;
 }
 
-/* Slide Styles */
-.slide-one, .slide-two, .slide-three {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; 
-    pointer-events: none;
-    z-index: 1;
-    transition: opacity 0.5s ease;
+/* Scrollable text area */
+.scroll-text {
+  position: absolute;
+  top: 45%; /* Position relative to the right-panel's top */
+  right: 10%; /* Position relative to the right-panel's right */
+  width: 70%; /* Percentage width relative to right-panel */
+  height: 40%; /* Percentage height relative to right-panel */
+  overflow-y: auto;
+  font-size: clamp(10px, 1.5vw, 14px); /* Responsive font size */
+  color: #000;
+  line-height: 1.4;
+  padding-right: 10px; /* For scrollbar space */
 }
 
-.slide-one.fade-in {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 2;
+/* Slide Styles (assuming these are direct children of bgcontain) */
+.slide-one, .slide-two, .slide-three {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1; /* Lower z-index than active slide */
+  transition: opacity 0.5s ease;
+  /* Ensure content within slides is positioned relative to the slide itself */
+  /* or use flex/grid within each slide if content needs to be centered/aligned */
+}
+
+.slide-one.fade-in,
+.slide-two.fade-in,
+.slide-three.fade-in {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2; /* Higher z-index for the active slide */
 }
 
 .fade-out {
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .fade-in {
-    opacity: 1 !important;
-    pointer-events: auto;
-    z-index: 2;
+  opacity: 1 !important;
+  pointer-events: auto;
 }
 
-
-/* Arrows */
+/* Navigation Arrows */
 #about-prev, #about-next {
   cursor: pointer;
   transition: opacity 0.5s ease;
-  z-index: 4;
+  z-index: 4; /* Ensure arrows are always on top */
   position: absolute;
-  width: 5vw;
+  width: 8%; /* Percentage width relative to bgcontain */
+  max-width: 80px; /* Max size for arrows */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #about-prev {
-  top: -41vw; /* Adjusted to fit within the bg-frame */
-  left: -7vw;
+  left: 2%; /* Percentage from the left of bgcontain */
 }
 
 #about-next {
-  top: -5vw; /* Adjusted to fit within the bg-frame */
-  right: -7vw
+  right: 2%; /* Percentage from the right of bgcontain */
 }
 
-/* Mobile layout */
+/* Mobile layout (adjust breakpoints as needed) */
 @media (max-width: 767px) {
-  #about {
-    width: 100vw;
-    height: 100vh;
+  .bgcontain {
+    width: 95vw; /* Take up more width on small screens */
+    height: 90vh; /* Give it a fixed height for mobile */
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .bg-frame {
-    width: 100%;
+    /* On mobile, the frame might need to be less prominent or scaled differently */
+    width: 150%; /* Make it larger to fill background */
+    height: 100%; /* Fill height */
+    opacity: 0.5; /* Make it semi-transparent */
+    position: absolute; /* Keep it absolute */
+    top: 0;
+    left: -25%; /* Adjust to center if width is > 100% */
+    padding-bottom: 0; /* Remove padding-bottom trick if fixed height */
   }
 
   .title {
-    top: 2vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* Adjusted width for mobile */
-  }
-
-  .right-panel {
-    top: -10vh;
-    right: 5vw;
-    width: 35vw;
+    position: relative; /* Change to relative for stacking */
+    width: 80%;
+    margin-top: 1rem;
+    top: auto; /* Remove absolute top */
+    left: auto; /* Remove absolute left */
+    transform: none; /* Remove transform */
   }
 
   .left-panel {
-    top: -40vh;
-    left: 5vw; /* Adjusted for mobile */
-    width: 60vw;
-    transform: rotate(0deg);
+    position: relative; /* Change to relative for stacking */
+    width: 60%;
+    margin-top: 1rem;
+    top: auto; /* Remove absolute top */
+    left: auto; /* Remove absolute left */
+    transform: none; /* Remove rotation */
+  }
+
+  .right-panel {
+    display: none; /* Hide right panel on mobile */
   }
 
   .scroll-text {
-    display: none;
+    position: relative; /* Change to relative for stacking */
+    width: 90%; /* Take up more width */
+    font-size: clamp(8px, 2.5vw, 12px); /* Smaller font for mobile */
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.8); /* Add background for readability */
+    margin-top: 1rem;
+    top: auto; /* Remove absolute top */
+    right: auto; /* Remove absolute right */
+    height: auto; /* Auto height for content */
   }
 
   #about-prev, #about-next {
-    width: 12vw;
-    top: -45vh;
+    position: absolute; /* Keep absolute for arrows */
+    width: 15%; /* Larger arrows for easier tapping */
+    top: 90%; /* Position at the bottom */
+    transform: translateY(-50%);
   }
 
   #about-prev {
-    left: 2vw;
+    left: 10%;
   }
 
   #about-next {
-    right: 2vw;
+    right: 10%;
   }
 }
 
-@media (min-width: 1440px) {
-  /* Styles for large/wide screens */
+/* Tablet styles (example breakpoint) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .bgcontain {
+    width: 90vw;
+    max-width: 900px;
+  }
+
+  .title {
+    top: 8%;
+    width: 80%;
+  }
+
   .left-panel {
-    top: 100px;
-    left: -50px;
+    top: 25%;
+    left: 8%;
+    width: 35%;
+    transform: rotate(-3deg);
   }
 
   .right-panel {
-    top: 100px;
-    right: -30px;
+    top: 15%;
+    right: 8%;
+    width: 40%;
   }
 
   .scroll-text {
-    top: 300px;
-    right: 100px;
-    font-size: 16px;
-    width: 20%;
+    top: 40%;
+    right: 15%;
+    width: 60%;
+    height: 45%;
+    font-size: clamp(11px, 1.8vw, 13px);
+  }
+
+  #about-prev, #about-next {
+    width: 6%;
   }
 }
-
 
