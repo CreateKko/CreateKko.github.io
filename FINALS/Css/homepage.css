@@ -268,13 +268,16 @@ body {
   justify-content: center; 
   align-items: center;
   padding: 0; 
+  overflow: hidden;
 }
 
 
 .bgcontain {
   position: relative;
-  width: 1000px; 
+  width: 90vw; 
   height: auto;
+  max-width: 1200px;
+  height: 0;
   display: flex; 
   justify-content: center; 
   align-items: center; 
@@ -285,10 +288,26 @@ body {
 }
 
 .bg-frame {
+  position: absolute;
+  background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png');
+  background-repeat: no-repeat;
   z-index: 0;
   width: 143%;
   height: auto;
   display: block;
+  pointer-events: none;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox for centering/alignment within this layer */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure these elements are above the bg-frame */
 }
 
 .title {
