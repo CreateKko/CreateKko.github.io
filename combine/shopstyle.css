@@ -543,285 +543,137 @@ body {
 }
 
 
-/* ========================================================================== */
-/* Existing CSS for the About Section (Desktop-first approach) */
-/* ========================================================================== */
+/* ========== OVERLAYED RESPONSIVE GRID LAYOUT FOR ABOUT SECTION ========== */
 
 #about {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 2rem;
   min-height: 100vh;
+  background-color: #fdf6f0;
 }
 
 .bgcontain {
+  display: grid;
+  grid-template-areas:
+    "title badge"
+    "logo  text"
+    "nav   nav";
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  width: 90%;
+  max-width: 1200px;
   position: relative;
-  width: 80vw; /* This is the desktop base width, will be overridden */
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  max-width: 80vw; /* Example: 90% of viewport width */
-}
-
-.bg-frame {
-  z-index: 0;
-  width: 100%;
-  height: auto;
-  display: block;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .title {
-  position: absolute;
+  grid-area: title;
+  transform: rotate(-5deg);
   z-index: 2;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1500px;
-  max-width: 1500px;
+  width: 100%;
 }
 
 .title img {
-  pointer-events: none;
   width: 100%;
+  height: auto;
+  pointer-events: none;
 }
 
-.left-panel {
-  position: absolute;
-  top: 297px;
-  left: -39px;
-  width: 60vw;
+.logo {
+  grid-area: logo;
+  transform: rotate(-8deg);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1;
-  transform: rotate(-10deg);
-  max-width: 100vw;
+  align-items: center;
 }
 
-.left-panel img {
-  pointer-events: none;
+.logo img {
   width: 100%;
+  max-width: 350px;
   height: auto;
   border-radius: 10px;
 }
 
 .scroll-text {
-  position: absolute;
-  top: 468px;
-  right: 217px;
-  width: 16%;
-  height: 28%;
-  /* overflow-y: auto; */
+  grid-area: text;
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 10px;
   font-size: 14px;
+  line-height: 1.5;
   color: #000;
-  line-height: 1.4;
-}
-
-.right-panel img {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  width: 85vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -21px;
-  right: -8px;
-  max-width: 100vw;
-}
-
-.slide-one, .slide-two, .slide-three {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-  transition: opacity 0.5s ease;
-}
-
-.slide-one.fade-in {
-  opacity: 1;
-  pointer-events: auto;
   z-index: 2;
 }
 
-.fade-out {
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.fade-in {
-  opacity: 1 !important;
-  pointer-events: auto;
-  z-index: 2;
-}
-
-#about-prev, #about-next {
-  cursor: pointer;
-  transition: opacity 0.5s ease;
-  z-index: 4;
-  position: absolute;
-}
-
-#about-prev {
-    top: -193px;
-    left: 173px;
-    width: 64%;
-    /* height: 30%; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+#about-prev,
 #about-next {
-  top: -203px; 
-  right: -394px; 
-  width: 180%; 
-  /* height: 26%; */
+  grid-area: nav;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 3;
 }
 
-/* ========================================================================== */
-/* Media Queries for Responsiveness */
-/* ========================================================================== */
+#about-prev img,
+#about-next img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
 
-/* Tablet and smaller desktops (e.g., 1024px to 768px) */
-@media (max-width: 1024px) {
+.badge {
+  grid-area: badge;
+  align-self: start;
+  justify-self: end;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+
+.badge img {
+  width: 120px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
   .bgcontain {
-    width: 90vw;
-    max-width: 800px;
-  }
-
-  .title {
-    top: -20%; /* Adjust top position relative to parent */
-    width: 120%; /* Scale down title image */
-  }
-
-  .left-panel {
-    top: 15%;
-    left: -10%;
-    width: 80%;
-    transform: rotate(-3deg);
-  }
-
-  .right-panel img {
-    top: 0%; /* Adjust top position */
-    right: -10%; /* Adjust right position */
-    width: 110%; /* Scale down */
+    grid-template-areas:
+      "title"
+      "badge"
+      "logo"
+      "text"
+      "nav";
+    grid-template-columns: 1fr;
   }
 
   .scroll-text {
-    top: 30%; /* Adjust top position */
-    right: 5%; /* Adjust right position */
-    width: 25%; /* Make text area wider */
-    height: 35%; /* Adjust height */
-    font-size: 11px; /* Slightly smaller font */
+    font-size: 12px;
+    max-height: 200px;
   }
 
-  #about-prev {
-    top: -25%; /* Adjust button position */
-    left: 5%; /* Adjust button position */
-    width: 50%; /* Scale button */
+  #about-prev img,
+  #about-next img {
+    width: 30px;
   }
 
-  #about-next {
-    top: -25%; /* Adjust button position */
-    right: 5%; /* Adjust button position */
-    width: 100%; /* Scale button */
+  .badge {
+    justify-self: center;
+    transform: rotate(0);
   }
 }
 
-/* Mobile devices (e.g., 767px and below) */
-@media (max-width: 767px) {
-  .mobile-layout {
-    width: 95vw;
-    height: 90vh;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .mobile-bg-frame {
-    width: 150%;
-    opacity: 0.5;
-  }
-
-  #about {
-    /* Adjust padding or alignment for smaller screens if needed */
-    padding: 1rem;
-  }
-
-  .title {
-    position: relative;
-    width: 80%;
-    margin-top: 1rem;
-  }
-
-  .left-panel {
-    position: relative;
-    width: 60%;
-    margin-top: 1rem;
-  }
-
-  .right-panel {
-    /* Hide or significantly scale down the right panel image as it's large */
-    display: none; /* Hide it for mobile to simplify layout */
-  }
-
-  
-
-  .scroll-text {
-    position: relative;
-    width: 90%;
-    font-size: 10px;
-    padding: 0.5rem;
-    background: rgba(255,255,255,0.8);
-  }
-
-  #about-prev, #about-next {
-    position: absolute; /* Keep absolute for buttons */
-    top: 90%;
-    width: 20%;
-  }
-
-  #about-prev {
-    left: 5%;
-  }
-
-  #about-next {
-    right: 5%;
-  }
-}
-
-/* Small mobile devices (e.g., 480px and below) */
 @media (max-width: 480px) {
-  .bgcontain {
-    height: 95vh; /* More height for content */
-  }
-
-  .title {
-    width: 90%;
-  }
-
-  .left-panel {
-    width: 70%;
-  }
-
   .scroll-text {
-    font-size: 9px;
-    max-height: 35%;
+    font-size: 11px;
   }
 
-  #about-prev, #about-next {
-    width: 25%;
-    top: 92%;
+  .logo img {
+    max-width: 250px;
   }
 }
