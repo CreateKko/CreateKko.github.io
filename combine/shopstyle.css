@@ -555,6 +555,7 @@ body {
 }
 
 .bgcontain {
+  position: relative;
   display: grid;
   grid-template-areas:
     "title badge"
@@ -569,6 +570,21 @@ body {
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.bg-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bgcontain > *:not(.bg-frame) {
+  position: relative;
+  z-index: 1;
 }
 
 .title {
