@@ -724,107 +724,96 @@ body {
 /* Mobile layout (adjust breakpoints as needed) */
 @media (max-width: 767px) {
   .bgcontain {
-    width: 95vw; /* Take up more width on small screens */
-    padding-bottom: 120%; /* Adjust aspect ratio for mobile if needed, e.g., taller */
-    height: auto; /* Let height be determined by padding-bottom */
+    width: 95vw;
+    padding-bottom: 120%; /* Adjust as needed for content */
+    height: auto;
   }
 
   .bg-frame {
-    /* On mobile, the frame might need to be less prominent or scaled differently */
-    background-size: contain; /* Ensure the image fits within the frame */
-    background-position: center; /* Center the background image */
+    background-size: contain; /* Ensure frame fits */
+    background-position: center;
   }
 
   .overlay-content {
     flex-direction: column; /* Stack elements vertically */
-    justify-content: flex-start; /* Align to the top */
-    padding-top: 5%; /* Add some top padding */
+    justify-content: flex-start; /* Align to top */
+    padding-top: 5%;
+    align-items: center; /* Center items horizontally when stacked */
   }
 
   .title {
-    position: relative; /* Change to relative for stacking */
-    width: 80%;
+    position: relative; /* Make it flow with content */
+    width: 90%; /* Adjust width for mobile */
     margin-top: 1rem;
-    top: auto; /* Remove absolute top */
-    left: auto; /* Remove absolute left */
-    transform: none; /* Remove transform */
+    top: auto;
+    left: auto;
+    transform: none;
   }
 
   .left-panel {
-    position: relative; /* Change to relative for stacking */
-    width: 60%;
-    margin-top: 1rem;
-    top: auto; /* Remove absolute top */
-    left: auto; /* Remove absolute left */
-    transform: none; /* Remove rotation */
+    position: relative; /* Make it flow with content */
+    width: 70%; /* Adjust size for mobile */
+    margin-top: 1.5rem; /* More space */
+    top: auto;
+    left: auto;
+    transform: none; /* Remove rotation for simplicity */
   }
 
   .right-panel {
-    display: none; /* Hide right panel on mobile */
+    position: relative; /* Make it flow with content */
+    width: 90%; /* Take up more width */
+    margin-top: 1.5rem; /* More space */
+    top: auto;
+    right: auto;
+    height: auto; /* Auto height for content */
+  }
+
+  .right-panel img {
+    /* If this image is decorative and not essential for mobile, consider hiding it */
+    display: none; /* Example: Hide the "Goal.png" or "devs.png" image on mobile */
   }
 
   .scroll-text {
-    position: relative; /* Change to relative for stacking */
-    width: 90%; /* Take up more width */
-    font-size: clamp(8px, 2.5vw, 12px); /* Smaller font for mobile */
-    padding: 0.5rem;
-    background: rgba(255,255,255,0.8); /* Add background for readability */
-    margin-top: 1rem;
-    top: auto; /* Remove absolute top */
-    right: auto; /* Remove absolute right */
+    position: relative; /* Make it flow within right-panel */
+    width: 100%; /* Fill its parent */
     height: auto; /* Auto height for content */
+    font-size: clamp(14px, 4vw, 16px); /* Responsive and readable font size */
+    padding: 1rem; /* More padding */
+    background: rgba(255,255,255,0.9); /* Semi-transparent background for readability */
+    color: #333; /* Darker text for contrast on light background */
+    border-radius: 8px; /* Soften corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+    overflow-y: auto; /* Keep scroll if content is long */
+    max-height: 200px; /* Limit height and force scroll if needed */
   }
 
   #about-prev, #about-next {
     position: absolute; /* Keep absolute for arrows */
-    width: 15%; /* Larger arrows for easier tapping */
-    top: 90%; /* Position at the bottom */
+    width: 18%; /* Larger tap target */
+    max-width: 60px; /* Cap size */
+    top: 85%; /* Position lower */
     transform: translateY(-50%);
+    /* Ensure images within these divs are also scaled */
+    & img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   #about-prev {
-    left: 10%;
+    left: 5%;
   }
 
   #about-next {
-    right: 10%;
-  }
-}
-
-/* Tablet styles (example breakpoint) */
-@media (max-width: 1024px) and (min-width: 768px) {
-  .bgcontain {
-    width: 90vw;
-    max-width: 900px;
+    right: 5%;
   }
 
-  .title {
-    top: 8%;
-    width: 80%;
-  }
-
-  .left-panel {
-    top: 25%;
-    left: 8%;
-    width: 35%;
-    transform: rotate(-3deg);
-  }
-
-  .right-panel {
-    top: 15%;
-    right: 8%;
-    width: 40%;
-  }
-
-  .scroll-text {
-    top: 40%;
-    right: 15%;
-    width: 60%;
-    height: 45%;
-    font-size: clamp(11px, 1.8vw, 13px);
-  }
-
-  #about-prev, #about-next {
-    width: 6%;
+  /* Adjust slide positioning if needed after stacking panels */
+  .slide-one, .slide-two, .slide-three {
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 1rem; /* Add some top padding to slides */
   }
 }
