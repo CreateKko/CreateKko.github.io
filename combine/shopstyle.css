@@ -697,17 +697,17 @@ body {
     top: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; /* Adjusted width for mobile */
+    width: 100%; /* Adjusted width for mobile */
   }
 
   .right-panel {
-    top: 10vh;
+    top: -10vh;
     right: 5vw;
     width: 35vw;
   }
 
   .left-panel {
-    top: 40vh;
+    top: -40vh;
     left: 5vw; /* Adjusted for mobile */
     width: 60vw;
     transform: rotate(0deg);
@@ -719,7 +719,7 @@ body {
 
   #about-prev, #about-next {
     width: 12vw;
-    top: 45vh;
+    top: -45vh;
   }
 
   #about-prev {
