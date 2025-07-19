@@ -566,13 +566,12 @@ body {
 }
 
 .bg-frame {
-  z-index: 0;
+  position: absolute;
   width: 100%;
   height: auto;
-  display: block;
-  position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
 }
 
 .title {
@@ -600,7 +599,6 @@ body {
   justify-content: center;
   z-index: 1;
   transform: rotate(-10deg);
-  max-width: 100vw;
 }
 
 .left-panel img {
@@ -621,19 +619,22 @@ body {
   line-height: 1.4;
 }
 
-.right-panel img {
+.right-panel {
   position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  width: 85vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top: -21px;
   right: -8px;
-  max-width: 100vw;
+  width: 22vw;
+  height: auto;
+  z-index: 1;
 }
 
+.right-panel img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Slide Styles */
 .slide-one, .slide-two, .slide-three {
   position: absolute;
   top: 0;
@@ -655,84 +656,61 @@ body {
 .fade-out {
   opacity: 0;
   pointer-events: none;
-  z-index: 1;
 }
 
 .fade-in {
   opacity: 1 !important;
   pointer-events: auto;
-  z-index: 2;
 }
 
+/* Arrows */
 #about-prev, #about-next {
   cursor: pointer;
   transition: opacity 0.5s ease;
   z-index: 4;
   position: absolute;
+  width: 5vw;
 }
 
 #about-prev {
-  top: -193px;
-  left: 173px;
-  width: 64%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 40%;
+  left: 2vw;
 }
 
 #about-next {
-  top: -203px;
-  right: -394px;
-  width: 180%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 40%;
+  right: 2vw;
 }
 
-/* Mobile layout based on image */
+/* Mobile layout */
 @media (max-width: 767px) {
   #about {
-    position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    padding: 0;
   }
 
   .bg-frame {
-    position: absolute;
     width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
-    z-index: 0;
   }
 
   .title {
-    position: absolute;
     top: 2vh;
-    left: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60vw;
-    transform: none;
-    z-index: 2;
   }
 
   .right-panel {
-    display: block;
-    position: absolute;
-    top: 5vh;
-    right: 2vw;
+    top: 10vh;
+    right: 5vw;
     width: 35vw;
-    z-index: 3;
   }
 
   .left-panel {
-    position: absolute;
-    top: 35vh;
+    top: 40vh;
     left: 20vw;
     width: 60vw;
-    z-index: 2;
-    transform: none;
+    transform: rotate(0deg);
   }
 
   .scroll-text {
@@ -740,12 +718,8 @@ body {
   }
 
   #about-prev, #about-next {
-    position: absolute;
     width: 12vw;
-    height: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 4;
+    top: 45vh;
   }
 
   #about-prev {
