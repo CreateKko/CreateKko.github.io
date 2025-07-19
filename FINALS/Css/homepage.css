@@ -268,16 +268,13 @@ body {
   justify-content: center; 
   align-items: center;
   padding: 0; 
-  overflow: hidden;
 }
 
 
 .bgcontain {
   position: relative;
-  width: 90vw; 
+  width: 1000px; 
   height: auto;
-  max-width: 1200px;
-  height: 0;
   display: flex; 
   justify-content: center; 
   align-items: center; 
@@ -288,26 +285,10 @@ body {
 }
 
 .bg-frame {
-  position: absolute;
-  background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png');
-  background-repeat: no-repeat;
   z-index: 0;
   width: 143%;
   height: auto;
   display: block;
-  pointer-events: none;
-}
-
-.overlay-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex; /* Use flexbox for centering/alignment within this layer */
-    justify-content: center;
-    align-items: center;
-    z-index: 1; /* Ensure these elements are above the bg-frame */
 }
 
 .title {
@@ -421,112 +402,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Original Mobile layout (adjust breakpoints as needed) */
-@media (max-width: 767px) {
-  .bgcontain {
-    width: 95vw; /* REMOVE OR COMMENT OUT */
-    padding-bottom: 120%; /* REMOVE OR COMMENT OUT */
-    height: auto; /* REMOVE OR COMMENT OUT */
-  }
-
-  .bg-frame {
-    /* On mobile, the frame might need to be less prominent or scaled differently */
-    background-size: contain; /* REMOVE OR COMMENT OUT */
-    background-position: center; /* REMOVE OR COMMENT OUT */
-  }
-
-  .overlay-content {
-    flex-direction: column; /* REMOVE OR COMMENT OUT */
-    justify-content: flex-start; /* REMOVE OR COMMENT OUT */
-    padding-top: 5%; /* REMOVE OR COMMENT OUT */
-  }
-
-  .title {
-    position: relative; /* REMOVE OR COMMENT OUT */
-    width: 80%; /* REMOVE OR COMMENT OUT */
-    margin-top: 1rem; /* REMOVE OR COMMENT OUT */
-    top: auto; /* REMOVE OR COMMENT OUT */
-    left: auto; /* REMOVE OR COMMENT OUT */
-    transform: none; /* REMOVE OR COMMENT OUT */
-  }
-
-  .left-panel {
-    position: relative; /* REMOVE OR COMMENT OUT */
-    width: 60%; /* REMOVE OR COMMENT OUT */
-    margin-top: 1rem; /* REMOVE OR COMMENT OUT */
-    top: auto; /* REMOVE OR COMMENT OUT */
-    left: auto; /* REMOVE OR COMMENT OUT */
-    transform: none; /* REMOVE OR COMMENT OUT */
-  }
-
-  .right-panel {
-    display: none; /* REMOVE OR COMMENT OUT */
-  }
-
-  .scroll-text {
-    position: relative; /* REMOVE OR COMMENT OUT */
-    width: 90%; /* REMOVE OR COMMENT OUT */
-    font-size: clamp(8px, 2.5vw, 12px); /* REMOVE OR COMMENT OUT */
-    padding: 0.5rem; /* REMOVE OR COMMENT OUT */
-    background: rgba(255,255,255,0.8); /* REMOVE OR COMMENT OUT */
-    margin-top: 1rem; /* REMOVE OR COMMENT OUT */
-    top: auto; /* REMOVE OR COMMENT OUT */
-    right: auto; /* REMOVE OR COMMENT OUT */
-    height: auto; /* REMOVE OR COMMENT OUT */
-  }
-
-  #about-prev, #about-next {
-    position: absolute; /* REMOVE OR COMMENT OUT */
-    width: 15%; /* REMOVE OR COMMENT OUT */
-    top: 90%; /* REMOVE OR COMMENT OUT */
-    transform: translateY(-50%); /* REMOVE OR COMMENT OUT */
-  }
-
-  #about-prev {
-    left: 10%; /* REMOVE OR COMMENT OUT */
-  }
-
-  #about-next {
-    right: 10%; /* REMOVE OR COMMENT OUT */
-  }
-}
-
-/* Original Tablet styles (example breakpoint) */
-@media (max-width: 1024px) and (min-width: 768px) {
-  .bgcontain {
-    width: 90vw; /* REMOVE OR COMMENT OUT */
-    max-width: 900px; /* REMOVE OR COMMENT OUT */
-  }
-
-  .title {
-    top: 8%; /* REMOVE OR COMMENT OUT */
-    width: 80%; /* REMOVE OR COMMENT OUT */
-  }
-
-  .left-panel {
-    top: 25%; /* REMOVE OR COMMENT OUT */
-    left: 8%; /* REMOVE OR COMMENT OUT */
-    width: 35%; /* REMOVE OR COMMENT OUT */
-    transform: rotate(-3deg); /* REMOVE OR COMMENT OUT */
-  }
-
-  .right-panel {
-    top: 15%; /* REMOVE OR COMMENT OUT */
-    right: 8%; /* REMOVE OR COMMENT OUT */
-    width: 40%; /* REMOVE OR COMMENT OUT */
-  }
-
-  .scroll-text {
-    top: 40%; /* REMOVE OR COMMENT OUT */
-    right: 15%; /* REMOVE OR COMMENT OUT */
-    width: 60%; /* REMOVE OR COMMENT OUT */
-    height: 45%; /* REMOVE OR COMMENT OUT */
-    font-size: clamp(11px, 1.8vw, 13px); /* REMOVE OR COMMENT OUT */
-  }
-
-  #about-prev, #about-next {
-    width: 6%; /* REMOVE OR COMMENT OUT */
-  }
 }
