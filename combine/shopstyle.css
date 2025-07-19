@@ -574,7 +574,7 @@ body {
 }
 
 .title {
-  position: block;
+  position: absolute;
   z-index: 2;
   top: 50px;
   left: 50%;
@@ -589,7 +589,7 @@ body {
 }
 
 .left-panel {
-  position: inline-block;
+  position: absolute;
   top: 297px;
   left: -39px;
   width: 60vw;
@@ -609,7 +609,7 @@ body {
 }
 
 .scroll-text {
-  position: block;
+  position: absolute;
   top: 468px;
   right: 217px;
   width: 16%;
@@ -621,7 +621,7 @@ body {
 }
 
 .right-panel img {
-  position: inline-block;
+  position: absolute;
   pointer-events: none;
   z-index: 1;
   width: 85vw;
@@ -667,7 +667,7 @@ body {
   cursor: pointer;
   transition: opacity 0.5s ease;
   z-index: 4;
-  position: inline-block;
+  position: absolute;
 }
 
 #about-prev {
@@ -702,7 +702,7 @@ body {
   }
 
   .title {
-    top: -10%; /* Adjust top position relative to parent */
+    top: -20%; /* Adjust top position relative to parent */
     width: 120%; /* Scale down title image */
   }
 
