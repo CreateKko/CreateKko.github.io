@@ -577,10 +577,10 @@ body {
 .title {
   position: absolute;
   z-index: 2;
-  top: 50px;
+  top: 20px; /* Adjusted to fit within the bg-frame */
   left: 50%;
   transform: translateX(-50%);
-  width: 1500px;
+  width: 80%; /* Adjusted width to fit within the bg-frame */
   max-width: 1500px;
 }
 
@@ -591,9 +591,9 @@ body {
 
 .left-panel {
   position: absolute;
-  top: 297px;
-  left: -39px;
-  width: 60vw;
+  top: 50%; /* Centered vertically */
+  left: 5%; /* Adjusted to fit within the bg-frame */
+  width: 30%; /* Adjusted width to fit within the bg-frame */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,10 +610,10 @@ body {
 
 .scroll-text {
   position: absolute;
-  top: 468px;
-  right: 217px;
+  top: 60%; /* Adjusted to fit within the bg-frame */
+  right: 10%; /* Adjusted to fit within the bg-frame */
   width: 16%;
-  height: 28%;
+  height: auto; /* Changed to auto for better responsiveness */
   font-size: 14px;
   color: #000;
   line-height: 1.4;
@@ -621,9 +621,9 @@ body {
 
 .right-panel {
   position: absolute;
-  top: -21px;
-  right: -8px;
-  width: 22vw;
+  top: 50%; /* Centered vertically */
+  right: 5%; /* Adjusted to fit within the bg-frame */
+  width: 30%; /* Adjusted width to fit within the bg-frame */
   height: auto;
   z-index: 1;
 }
@@ -673,12 +673,12 @@ body {
 }
 
 #about-prev {
-  top: 40%;
+  top: 40%; /* Adjusted to fit within the bg-frame */
   left: 2vw;
 }
 
 #about-next {
-  top: 40%;
+  top: 40%; /* Adjusted to fit within the bg-frame */
   right: 2vw;
 }
 
@@ -697,7 +697,7 @@ body {
     top: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 60vw;
+    width: 80%; /* Adjusted width for mobile */
   }
 
   .right-panel {
@@ -708,7 +708,7 @@ body {
 
   .left-panel {
     top: 40vh;
-    left: 20vw;
+    left: 5vw; /* Adjusted for mobile */
     width: 60vw;
     transform: rotate(0deg);
   }
@@ -730,3 +730,4 @@ body {
     right: 2vw;
   }
 }
+
