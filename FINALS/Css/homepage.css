@@ -289,7 +289,6 @@ body {
 
 .bg-frame {
   position: absolute;
-  background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png');
   background-repeat: no-repeat;
   z-index: 0;
   width: 143%;
