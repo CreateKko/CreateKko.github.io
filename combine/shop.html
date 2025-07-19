@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Pokémon GO Enhanced</title>
   <link rel="stylesheet" href="shopstyle.css" />
 </head>
 <body>
-  <button class="shop-button" onclick="toggleShop()">Go to Shop</button>
+  <button class="shop-button" onclick="toggleShop()" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">Go to Shop</button>
 
   <div id="homepage-content">
     <main class="carousel-wrapper">
@@ -57,29 +57,29 @@
         </section>
 
         <section class="carousel-slide" id="about">
-          <div class="bgcontain">
-            <div class="bg-frame"></div> <!-- This div will hold the background image via CSS -->
+          <div class="bgcontain" style="position: relative; width: 100%; max-width: 1000px; margin: 0 auto;">
+            <div class="bg-frame" style="position: absolute; width: 100%; height: 100%; background-image: url('https://createkko.github.io/FINALS/Elements/bg_about.png'); background-size: contain; background-repeat: no-repeat;"></div> <!-- This div will hold the background image via CSS -->
 
             <div class="overlay-content">
-              <div class="title">
-                <img src="https://createkko.github.io/FINALS/Elements/title%20small.png" alt="Behind the Screen Title">
+              <div class="title" style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 500px; z-index: 2;">
+                <img src="https://createkko.github.io/FINALS/Elements/title%20small.png" alt="Behind the Screen Title" style="width: 100%;">
               </div>
 
-              <div id="about-prev">
-                <img src="https://createkko.github.io/FINALS/Elements/prev.png" alt="Previous button">
+              <div id="about-prev" style="position: absolute; left: 50px; top: 50%; transform: translateY(-50%); z-index: 4;">
+                <img src="https://createkko.github.io/FINALS/Elements/prev.png" alt="Previous button" style="width: 50px;">
               </div>
 
-              <div id="about-next">
-                <img src="https://createkko.github.io/FINALS/Elements/next.png" alt="Next button">
+              <div id="about-next" style="position: absolute; right: 50px; top: 50%; transform: translateY(-50%); z-index: 4;">
+                <img src="https://createkko.github.io/FINALS/Elements/next.png" alt="Next button" style="width: 50px;">
               </div>
 
               <div class="slide-one">
-                <div class="left-panel">
-                  <img src="https://createkko.github.io/FINALS/Elements/pokelogo.png" alt="Pokémon Logo">
+                <div class="left-panel" style="position: absolute; top: 200px; left: 50px; width: 200px; z-index: 1;">
+                  <img src="https://createkko.github.io/FINALS/Elements/pokelogo.png" alt="Pokémon Logo" style="width: 100%;">
                 </div>
-                <div class="right-panel">
-                  <img src="https://createkko.github.io/FINALS/Elements/titel right.png" alt="Title Image">
-                  <div class="scroll-text">
+                <div class="right-panel" style="position: absolute; top: 50px; right: 50px; width: 200px; height: 300px; z-index: 1;">
+                  <img src="https://createkko.github.io/FINALS/Elements/titel right.png" alt="Title Image" style="width: 100%;">
+                  <div class="scroll-text" style="position: absolute; top: 250px; right: 20px; width: 160px; height: 100px; overflow-y: auto; font-size: 12px;">
                     <p>
                       For over 25 years, The Pokémon Company International (TPCi) has been devoted to creating moments of joy,
                       connection, and discovery for fans across the globe. Our mission is to delight through meaningful experiences that
