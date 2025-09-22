@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="Author" content="Das Sound Factor">
+    <title>DasSoundFactor Registration Form</title>
+    <link rel="stylesheet" href="external_registration.css">
+
+</head>
+<body>
+
+<div class="header">
+    <img src="Header.jpg" alt="">
+</div>
+
+
+<div class="apply-box">
+  <label for="position">Applying for:</label>
+  <select id="position" name="position" required>
+    <option value="" disabled selected>Select a position</option>
+    <option>Graphic Designer</option>
+    <option>Web Developer</option>
+    <option>Project Manager</option>
+    <option>Multimedia Artist Intern</option>
+    <option>Sound Designer Intern</option>
+    <option>Junior Music Producer</option>
+    <option>Data Analyst</option>
+    <option>Quality Assurance</option>
+  </select>
+</div>
+
+
+<div class="forms">
+    <div class="Pers">
+    <form>
+        <label for="name">Full Name:</label><br>
+        <input type="text" required="required"><br>
+
+        <div class="columns">
+            <div class="col1">
+                <label for="birth">Date of Birth</label><br>
+                <input type="date" required="required"><br>
+
+                <label for="Nat">Nationality</label><br>
+                <input type="text" required="required"><br>
+            </div>
+
+            <div class="col2">
+                <label for="gender">Sex</label><br>
+                Female<input type="radio" name="gender"> 
+                Male<input type="radio" name="gender"><br>
+                <div class="stats">
+                  <label for="Status">Civil Status</label><br>
+                  <input type="text" required="required"><br>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <div class="Divider">
+    <hr class="dashed">
+    </div>
+
+    <div class="Contacts">
+    <form>
+        <div class="con_col">
+            <div class="c_col1">
+                <label for="E-mail">E-mail</label><br>
+                <input type="email"><br>
+                
+                <div class="cp">
+                    <label for="cp">Mobile Number</label><br>
+                    <input type="number"><br>
+                </div>
+            </div>
+
+            <div class="c_col2">
+                <label for="Address">Current Address</label><br>
+                <textarea></textarea><br>
+
+                <label for="code">Zip-code</label><br>
+                <input type="number"><br>
+            </div>
+        </div>
+
+        <p>
+            Incase of emergency, contact this person:<br>
+        </p>
+
+        <div class="emer">
+            <div class="ecol">
+                <div class="e_col1">
+                    <label for="E-name">Name</label><br>
+                    <input type="text"><br>
+                </div>
+
+                <div class="e_col2">
+                    <label for="E-rel">Relationship</label><br>
+                    <input type="text"><br>
+                </div>
+
+                <div class="e_col3">
+                    <label for="e-cp">Number</label><br>
+                    <input type="number"><br>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <div class="Divider">
+    <hr class="dashed">
+    </div>
+
+    <div class="Educ">
+    <table>
+        <thead>
+            <th>Educational Attainment</th>
+            <th>Name of Institution/Location</th>
+            <th>Date of Graduation</th>
+            <th>Honors/Degree Earned</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="attainment">Elementary</td><br>
+                <td><input type="text"></td>
+                <td><input type="month"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="attainment">Secondary</td><br>
+                <td><input type="text"></td>
+                <td><input type="month"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="attainment">Tertiary</td><br>
+                <td><input type="text"></td>
+                <td><input type="month"></td>
+                <td><input type="text"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="Divider">
+    <hr class="dashed">
+    </div>
+
+    <div class="file">
+    <form>
+        <label for="resume">Upload Resume*</label><br>
+        <input type="file"><br>
+        
+        <label for="Cv">Upload CV*</label><br>
+        <input type="file"><br>
+
+        <label for="Pf">Upload Portfolio*</label><br>
+        <h6 class="form-note">If you're applying for non-creative position, put N/A</h6>
+        <input type="file"><br>
+    </form>
+    </div>
+
+    <div class="Divider">
+    <hr class="dashed">
+    </div>
+
+    <div class="additional">
+    <form>
+        <label for="reason">Why do you want to work with us? </label><br>
+        <textarea></textarea>
+    </form>
+    </div>
+
+    <button class="done" type="submit">Send Form</button>
+
+</div>
+
+
+
+</body>
+</html>
