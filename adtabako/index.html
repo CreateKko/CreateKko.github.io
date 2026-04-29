@@ -1,0 +1,46 @@
+<!doctype html> 
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic JavaScript</title>
+	<script>
+		function displayMessage()
+		{
+			var displayHTML = getFormInfo();
+			var messageDiv = document.getElementById('messagediv');
+			messageDiv.innerHtml = displayHTML; 
+		}
+		function getFormInfo()
+		{
+			var msg = "<p> MESSAGES: <br/>";
+			var firstname = document.getElementById('firstname').value;
+			var firstname_UC = firstname.toUpperCase();
+			if (firstname_UC == 'AIKO')
+			{
+				msg = "<br/> You must be the Professor!";
+			} else { 
+				msg =+ "<br/> You must be the student named" + firstname;
+			}
+			return msg;
+		}
+	</script>
+  </head>
+  <body>
+    <div> 
+		<form method="post" action="dummy.php"> 
+			<p> 
+				Enter First Name: </br>
+				<input type ="text" name="firstname" id="firstname" size="30" />
+			</p>
+			<p>
+				<input type="button" value="Display Message" onclick="displayMessage()"/>
+				<input type="reset"/>
+			</p>
+		</form>
+	</div>
+	<div id="messagediv">
+	</div>
+  </body>
+</html>
+
